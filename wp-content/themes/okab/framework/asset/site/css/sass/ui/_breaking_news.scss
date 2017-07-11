@@ -1,0 +1,123 @@
+$breaking-font-size: $base-font-size + 6;
+$breaking-height: 60;
+
+.dima-breaking-news {
+  .flexslider {
+    overflow: hidden;
+  }
+  .breaking-news-icon {
+    display: none;
+    font-size: px-to-em($breaking-font-size);
+    line-height: px-to-rem($breaking-height);
+    color: #fff;
+  }
+  background: $section-bg-color;
+  height: px-to-rem($breaking-height);
+  overflow: hidden;
+  .dima-breaking-news-title {
+    position: relative;
+    background: $theme_color;
+    top: 0;
+    height: px-to-rem($breaking-height);
+    display: block;
+    @include float-start;
+    @include padding-end(25px);
+    span {
+      font-family: $font-family-headings;
+      font-weight: $font-weight-semibold;
+      font-size: px-to-em($breaking-font-size);
+      line-height: px-to-rem($breaking-height);
+      color: #FFF;
+    }
+    &:before, &:after {
+      content: "";
+      display: block;
+      height: 0;
+      width: 0;
+      position: absolute;
+    }
+    &:before {
+      border: solid 14px transparent;
+      z-index: 3;
+    }
+    &:after {
+      border: solid 10px transparent;
+      z-index: 2;
+    }
+    &:after {
+      top: 21px;
+      @include start(auto);
+      @include end(-18px);
+      @include border-start-color($theme_color);
+    }
+  }
+  .side-color {
+    background: $theme_color;
+    width: 100%;
+    height: px-to-rem($breaking-height);
+    display: inline-block;
+    position: absolute;
+    @include end(100%);
+  }
+  ul.slides {
+    @include float-start;
+    height: px-to-rem($breaking-height);
+    line-height: px-to-rem($breaking-height);
+    width: 100%;
+    @include padding-start(px-to-rem($breaking-height/2));
+    li {
+      a {
+        color: $topbar-text-color;
+        &:hover {
+          opacity: .6;
+        }
+      }
+    }
+  }
+}
+
+.direction-side {
+  .flex-direction-nav a:before {
+    font-size: px-to-em($breaking-height/4, $base-font-size)
+  }
+  .flex-direction-nav {
+    li {
+      a {
+        opacity: .9;
+        color: $topbar-text-color;
+        &:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
+  .flex-direction-nav .flex-next,
+  .flex-direction-nav .flex-prev,
+  &:hover .flex-direction-nav .flex-prev,
+  &:hover .flex-direction-nav .flex-next {
+    @include start(initial);
+    @include end(0);
+  }
+  .flex-direction-nav {
+    a:before {
+      line-height: px-to-em($breaking-height/2, $base-font-size)
+    }
+  }
+}
+
+@include break(xsd-min) {
+  .dima-breaking-news {
+    .flex-nav-prev, .flex-nav-next {
+      display: none;
+    }
+
+    .dima-breaking-news-title {
+      i {
+        display: block;
+      }
+      span {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,59 @@
+//       Boxes
+.box {
+  //background: $box-bg;
+  border: 1px solid $border-color;
+  padding: 1.875em;
+  .box-titel {
+    margin-bottom: 30px;
+  }
+  &.box-with-marge {
+    margin-bottom: 30px;
+  }
+  &.coupon-box {
+    overflow: hidden;
+  }
+}
+
+.dima-no-box {
+  padding: 0 !important;
+  border: none !important;
+}
+
+.dima-box {
+  background: $box-bg;
+  border: 3px solid $border-color;
+  padding: 30px;
+  margin-bottom: 30px;
+  overflow: hidden;
+  .box-titel {
+    margin-bottom: 30px;
+  }
+}
+
+.last-menu {
+  ul.with-border li {
+    padding: 30px 0;
+    overflow: hidden;
+  }
+  .menu-price {
+    @include float-end();
+    color: $theme-color;
+  }
+  .label {
+    font-family: $font-family-base;
+    @include start(10px);
+    background: #ffd74d;
+    padding: 3px 5px;
+    line-height: 1em;
+    @include margin-start(10px)
+  }
+  .attachment-menu {
+    border: 1px solid $border-color;
+    @include float-start();
+    @include margin-end(30px);
+    @include margin-start(0px);
+    width: 100px;
+    box-shadow: 0 0 0 0;
+    max-width: none !important;
+  }
+}

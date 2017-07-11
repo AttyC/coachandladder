@@ -1,0 +1,86 @@
+.social-media {
+
+  li {
+    cursor: pointer;
+    border: 1px solid $border-color;
+    text-align: center;
+    a {
+      display: inline-block;
+      font-family: $FontAwesome;
+    }
+    @include transition(all 0.2s ease-in);
+    &:hover {
+      border: 1px solid $theme-color;
+      background: $theme-color;
+      a i {
+        color: #FFFFFF;
+      }
+    }
+  }
+
+  &.social-small li {
+    a {
+      font-size: 18px;
+      line-height: 32px;
+      width: 32px;
+      height: 32px;
+    }
+  }
+
+  &.social-medium li {
+    a {
+      font-size: 22px;
+      line-height: 50px;
+      width: 50px;
+      height: 50px;
+    }
+  }
+  &.social-big li {
+    a {
+      font-size: 30px;
+      line-height: 64px;
+      width: 64px;
+      height: 64px;
+    }
+  }
+
+  &.dima-social-post {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid $widget-border-color;
+    li {
+      float: none;
+      margin-bottom: 8px;
+    }
+  }
+
+  &.dima-social-author {
+    margin-bottom: 1px;
+    @include margin-start(1px);
+  }
+
+  &.dima-show {
+    li {
+      @include margin-end(10px);
+      border: 1px solid $border-color;
+      a {
+        color: $header-font-color;
+      }
+    }
+  }
+
+}
+
+.circle-social {
+  ul {
+    li {
+      @include border-radius(50%);
+    }
+  }
+}
+
+.dark-bg {
+  > .social-media li i {
+    color: #ffffff;
+  }
+}

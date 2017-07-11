@@ -1,0 +1,168 @@
+hr {
+  position: relative;
+  float: none;
+  display: block;
+  width: 100%;
+  height: 1px;
+  border-color: $hr-color;
+  margin: 0 0 25px;
+  padding: 25px 0 0;
+  border-width: 0;
+  border-bottom-width: 1px;
+  border-top-style: solid;
+  clear: both;
+}
+
+.topaz-line {
+  position: relative;
+  color: $theme-color;
+  width: 160px;
+  margin: 25px auto;
+  @include font-size(13, 20);
+  text-align: center;
+  overflow: hidden;
+  height: 20px;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    top: 50%;
+    display: block;
+    border-bottom: 1px solid $hr-color;
+    margin-top: -1px;
+  }
+  &:before {
+    @include end(-15px);
+  }
+
+  &:after {
+    @include start(-15px);
+  }
+  &.hr-left {
+    @include float_start();
+    @include start(-6px);
+    position: absolute;
+    top: -9px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      border-bottom: 1px solid $hr-color;
+      display: block;
+      width: 60px;
+      top: 4px;
+    }
+
+    &:before {
+      content: none;
+      top: 4px;
+    }
+  }
+
+}
+
+.line-hr {
+  margin-bottom: 30px;
+  width: 160px;
+  border-top: 1px solid $hr-color;
+  @include margin-end(auto);
+  @include margin-start(auto);
+  &.line-start {
+    @include margin-start(0);
+    @include margin-end(auto);
+  }
+  &.line-end {
+    @include margin-end(0);
+    @include margin-start(auto);
+  }
+}
+
+.hr-start, .hr-end {
+  position: relative;
+  display: block;
+  padding-bottom: 25px;
+  margin-top: 25px;
+  clear: both;
+  i {
+    position: relative;
+    color: $theme-color;
+    @include font-size(13, 12);
+  }
+}
+
+.hr-start {
+  i {
+    @include float_start();
+  }
+  width: 100%;
+  &:after {
+    content: '';
+    position: absolute;
+    border-bottom: 1px solid $hr-color;
+    display: block;
+    width: 150px;
+    @include start(15px);
+    top: 5px;
+  }
+
+}
+
+.hr-end {
+  i {
+    @include float_end();
+  }
+  width: 100%;
+  &:before {
+    content: '';
+    position: absolute;
+    border-bottom: 1px solid $hr-color;
+    display: block;
+    width: 150px;
+    @include end(15px);
+    top: 5px;
+  }
+}
+
+.divider {
+  padding: 25px 0 0;
+  margin: 0 0 25px;
+  border-bottom: 1px solid transparent;
+  clear: both;
+  .dashed {
+    border-bottom: 1px dashed $hr-color;
+  }
+  .double {
+    border-bottom: 3px double $hr-color;
+  }
+
+}
+
+&.full-divider {
+  width: 100% !important;
+}
+
+.dark-bg {
+  hr {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+  .divider {
+    .dashed, .double {
+      border-color: rgba(255, 255, 255, 0.4);
+    }
+  }
+  .hr-start,
+  .hr-end {
+    &:before, &:after {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+  }
+  .line-hr {
+    border-top: 1px solid rgba(255, 255, 255, 0.4);
+  }
+  .topaz-line {
+    &:before, &:after {
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    }
+  }
+}

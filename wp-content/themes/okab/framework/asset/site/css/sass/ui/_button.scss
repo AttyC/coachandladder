@@ -1,0 +1,273 @@
+$button-color: (
+        di_header: $btn_bg_header,
+        di_white: #FFFFFF,
+        di_green: #53cf00,
+        di_blue: #3375ff,
+        di_purple: #7200da,
+        di_red: #e81a27,
+        di_yellow: #f9c00c);
+
+[type="submit"] {
+  color: $fill-btn-color;
+  border: none;
+  &:hover {
+    color: $fill-btn-color-hover;
+    background-color: darken($default-btn-bg-color, 10%);
+  }
+  i {
+    line-height: 45px;
+  }
+}
+
+.widget .button,
+[type="submit"], .dima-button {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+  font-family: $font-family-headings;
+  outline: none;
+  margin: 0;
+  min-height: 1em;
+  padding: 15px;
+  background-color: $default-btn-bg-color;
+  font-weight: $btn-weight;
+  font-style: normal;
+  text-align: center;
+  line-height: 18px;
+  text-decoration: none;
+  min-width: 160px;
+  vertical-align: middle;
+  overflow: hidden;
+
+  @include user-select(none);
+
+  @include box-sizing(order-box);
+
+  @include transition(all 0.2s ease-in);
+
+  @if $radius-var != 0 {
+    @include border-radius($radius-var);
+  }
+
+  -webkit-backface-visibility: hidden;
+
+  i {
+    @include padding-end(15px);
+    @include margin-start(-15px);
+  }
+}
+
+.widget .button,
+[type="submit"] {
+  &:hover {
+    color: $fill-btn-color-hover;
+    background-color: darken($default-btn-bg-color, 10%);
+  }
+}
+
+//--- button fill ---
+
+.fill {
+  color: $fill-btn-color;
+
+  &:hover {
+    color: $fill-btn-color-hover;
+    background-color: darken($default-btn-bg-color, 10%);
+  }
+
+}
+
+//--- button stroke ---
+
+.stroke {
+  background: rgba(255, 255, 255, 0) !important;
+  color: $btn-stroke-color;
+  border: 1px solid $btn-border-color;
+
+  @include transition(all 0.2s ease-in);
+
+  z-index: 10;
+
+  &:after {
+    content: '';
+    position: absolute;
+
+    @include transition(all 0.2s ease-in);
+
+    z-index: 5;
+  }
+
+  &:hover {
+    color: $btn-stroke-color-hover !important;
+    background-image: none !important;
+  }
+}
+
+.stroke[data-direction="down"] {
+  &:after {
+    @include start(0);
+
+    top: 0;
+    height: 0;
+    width: 100%;
+  }
+}
+
+.stroke[data-direction="up"] {
+  &:after {
+    @include start(0);
+
+    bottom: 0;
+    height: 0;
+    width: 100%;
+  }
+}
+
+.stroke[data-direction="start"] {
+  &:after {
+    @include start(0);
+
+    top: 0;
+    height: 100%;
+    width: 0;
+  }
+}
+
+.stroke[data-direction="end"] {
+  &:after {
+    @include end(0);
+
+    top: 0;
+    height: 100%;
+    width: 0;
+  }
+}
+
+.stroke[data-direction="up"]:hover:after,
+.stroke[data-direction="down"]:hover:after {
+  background: $btn-border-color;
+  color: #FFF;
+  height: 100%;
+  z-index: -1;
+}
+
+.stroke[data-direction="start"]:hover:after,
+.stroke[data-direction="end"]:hover:after {
+  background: $btn-border-color;
+  color: #FFF;
+  width: 100%;
+  z-index: -1;
+}
+
+//--- button block ---*/
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+// --- button Disabled ---*/
+
+.disabled.dima-button,
+.disabled.dima-button:hover,
+.disabled.dima-button.active {
+  background-color: #DDDDDD !important;
+  cursor: default;
+  color: rgba(0, 0, 0, 0.5) !important;
+  border-color: rgba(0, 0, 0, 0.5) !important;
+  opacity: 0.3 !important;
+}
+
+//    icons
+
+.icon {
+  @include padding-start(2em !important);
+
+  @include padding-end(1.4em !important);
+}
+
+//    Color
+
+@each $ClassNmae, $color in $button-color {
+  .#{$ClassNmae}.dima-button {
+    background-color: $color;
+    @if $ClassNmae == "di_white" {
+      color: $btn_bg_header;
+      &:hover {
+        color: $header-font-color !important;
+      }
+
+    } @else {
+      color: $default-btn-color;
+    }
+  }
+
+  .#{$ClassNmae}.stroke {
+    @if $border != "0" {
+      border: $border solid $color;
+    }
+
+    color: $color;
+
+    &:hover {
+      @if $ClassNmae == "di_white" {
+        color: $header-font-color !important;
+      } @else {
+        color: $btn-stroke-color-hover !important;
+      }
+      &:after {
+        background: $color;
+      }
+    }
+  }
+
+  .#{$ClassNmae}.fill:hover {
+    color: $fill-btn-color-hover;
+    background-color: darken($color, 10%);
+  }
+}
+
+//     Sizes
+@mixin btn_size($font-size, $line-height, $font-weight) {
+  font-size: $font-size;
+  font-weight: $font-weight;
+}
+
+@mixin btn_padding($padding, $min-width) {
+  min-width: $min-width;
+  @if $padding != "" {
+    padding: $padding;
+  }
+}
+
+.dima-btn-large,
+.dima-btn-big,
+.dima-btn-huge {
+  @include btn_size(18px, 18px, $btn-weight);
+}
+
+.dima-btn-mini {
+  @include btn_padding(12px 16px, 140px);
+}
+
+.dima-btn-large {
+  @include btn_padding(18px 24px, 180px);
+}
+
+.dima-btn-big {
+  @include btn_padding(21px 28px, 200px);
+}
+
+.dima-btn-huge {
+  @include btn_padding(24px 32px, 220px);
+}
+
+//      Rounded
+
+.dima-btn-rounded {
+  @include border-radius(6px);
+}
+
+.dima-btn-pill {
+  @include border-radius(18em);
+}

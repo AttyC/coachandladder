@@ -1,0 +1,141 @@
+//Blog Comments
+.page {
+  .dima-comments-list {
+    margin-top: 30px;
+  }
+}
+
+.dima-comments-list, .dima-reviews-list {
+  //comment header
+  .h-comment {
+    @include text-align_start();
+    padding: 0 0 30px 0;
+    margin-bottom: 0;
+    span {
+      background: $body-bg-color;
+      display: inline-block;
+      position: relative;
+      z-index: 3;
+      @include padding-end(10px);
+      small {
+        @include font-size(18, 18);
+      }
+    }
+  }
+  //comment content
+  .dima-comment {
+    margin: 0;
+    list-style: none;
+    .dima-post-author {
+      font-size: 14px;
+      font-weight: $p-weight;
+      font-style: italic;
+      display: block;
+      text-align: center;
+      padding-top: 10px;
+    }
+    .dima-comment-awaiting-moderation {
+      font-style: italic;
+    }
+    .content-comment {
+      border-top: 1px solid $second-border-color;
+      padding: 30px 0;
+      overflow: hidden;
+    }
+    li {
+
+      .dima-comment-img {
+        @extend .start-image;
+        img {
+          width: 80px !important;
+          height: 80px !important;
+        }
+      }
+      .comment-content {
+        p {
+          margin-bottom: 0;
+        }
+      }
+      .dima-comment-entry {
+        position: relative;
+        overflow: hidden;
+        ul.user-comment-titel {
+          .dima-comment-author {
+            font-style: normal;
+          }
+          width: 100%;
+          margin: 0 0 10px 0;
+          display: inline-block;
+          li {
+            border: none;
+            display: inline-block;
+          }
+          h6 {
+            @include margin-end(30px);
+            margin-bottom: 0;
+            font-weight: bold;
+          }
+        }
+      }
+      .children {
+        @include margin-start(89px);
+        list-style: none;
+        li {
+          &:last-child {
+            padding-bottom: 0;
+          }
+        }
+      }
+      .reply-form {
+        a {
+          margin-bottom: 10px;
+          @include font-size(14, 14);
+          display: block;
+        }
+      }
+    }
+    > li {
+      &:last-child {
+        margin-bottom: 70px;
+      }
+    }
+  }
+}
+
+.comment-reply-title {
+  margin-bottom: 30px;
+  @extend %h5;
+}
+
+//wordpress*/
+.dima-comments-navigation {
+  h6 {
+    margin-bottom: 15px;
+  }
+  margin-bottom: 30px;
+}
+
+.comment-time {
+  color: $body-text-color;
+  &:hover {
+    border-bottom: 1px dotted $body-text-color;
+  }
+}
+
+//--------------------------------------------
+@include break(sd-min) {
+  .dima-comments-list .dima-comment li {
+    .children, .dima-comment-entry {
+      margin: 0;
+    }
+    .dima-comment-entry header .comment-time {
+      display: block;
+      float: none;
+      font-size: 12px;
+    }
+    .dima-comment-img img {
+      width: 60px !important;
+      height: 60px !important;
+    }
+  }
+}

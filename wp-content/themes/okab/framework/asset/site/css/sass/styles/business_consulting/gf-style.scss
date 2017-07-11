@@ -1,0 +1,89 @@
+@charset "UTF-8";
+/*------------------------------------------------------------------
+[gravity forms Plugin Stylesheet]
+
+Project:	 PixelDIma OKAB
+Version:	 1.0
+Primary use: For OKAB Demo
+Style:       Light
+Direction :  LTR
+-------------------------------------------------------------------*/
+
+@import "../../extensions/modular-scale";
+@import "../../base/demo/business_consulting/all_ltr";
+@import "../../base/all";
+
+$form-lable-color: $header-font-color;
+$form-lable-color-focus: $theme-color;
+$form-bg-color: rgba(0, 0, 0, 0);
+$form-border-color: $border-color;
+$form-border-color-focus: $theme-color;
+$form-color: #727272;
+
+body .gform_wrapper {
+    max-width: 100%;
+    margin: 0 0 1.313em;
+}
+
+body .gform_wrapper .gform_heading {
+    width: 100%;
+}
+
+body .gform_wrapper input[type=text], body .gform_wrapper input[type=url], body .gform_wrapper input[type=email], body .gform_wrapper input[type=tel], body .gform_wrapper input[type=number], body .gform_wrapper input[type=password], body .gform_wrapper select, body .gform_wrapper textarea {
+    margin: 0;
+    padding: 16px;
+    background-color: $form-bg-color;
+    border: 1px solid $form-border-color;
+    outline: none;
+    color: $form-color;
+    @include transition(all 0.3s ease-in);
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+    @include box-sizing(border-box);
+    &.transparent {}
+    &.darck {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+    &.light {
+        background-color: rgba(0, 0, 0, 0.6);
+    }
+}
+
+body .gform_wrapper .top_label .gfield_label {
+    margin: 0 0 10px;
+    display: block;
+    color: $form-lable-color;
+    font-family: $font-family-base $font-family-headings;
+    @include font-size(14, 14);
+    &.error {
+        color: #C10000;
+        @include font-size(12, 11);
+        margin-top: 
+        -5px;
+        padding: 0;
+    }
+    &.required {
+        &:after {
+            content: '*';
+            color: $theme-color;
+            @include margin-start(5px);
+        }
+    }
+}
+
+body .gform_wrapper div.validation_error,
+body .gform_wrapper .top_label .gfield_error,
+body .gform_wrapper textarea.medium{
+    width: 100%;
+}
+body .ginput_container{
+    clear: both;
+    margin: 0 0 30px;
+    &.last {
+        margin-bottom: 0;
+    }
+}
+
+html[dir=rtl] .gform_wrapper input.button.gform_button[type=submit], html[dir=rtl] .gform_wrapper input.button.gform_next_button {
+    text-align: center !important;
+}

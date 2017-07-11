@@ -1,0 +1,207 @@
+// Pricing Table
+
+.dima-pricing-table {
+  width: 100%;
+  @include float_start;
+
+  .dima-pricing-col {
+    width: 100%;
+    &.featured {
+      &.pricing-style-two {
+        .dima-pricing-col-info {
+          .button {
+            @include box-shadow(0px 0px 0px 1px $theme-color);
+          }
+        }
+      }
+    }
+    &.pricing-style-two {
+      li:nth-child(2n+1) {
+        background-color: #f9f9f9;
+      }
+      li:last-child {
+        border-bottom: 1px solid $pricing-separator-border;
+      }
+
+      .dima-pricing-col-info {
+        background: #fff;
+        padding: 30px 0;
+      }
+
+      .dima-button {
+        margin-top: 15px;
+      }
+    }
+    &.pricing-style-callout {
+      .dima-pricing-col-info {
+        padding-bottom: 0;
+      }
+    }
+
+    &.box-shadow {
+      @include box-shadow(0px 0px 13px 0px rgba(112, 112, 112, 0.35));
+      .dima-pricing-col-info {
+        border: none;
+      }
+    }
+    @include float_start;
+    text-align: center;
+    position: relative;
+    .dima-pricing-col-info {
+      background: $pricing-body-bg;
+      padding: 30px;
+      color: $body-text-color;
+      &.full-line {
+        padding: 30px 0;
+      }
+      @if $border-radius != 0 {
+        border-bottom-left-radius: $border-radius;
+        border-bottom-right-radius: $border-radius;
+      }
+
+      margin: 0;
+      margin-bottom: -1px;
+      @include margin-start(-1px);
+      border: 1px solid $border-color;
+      .icon-list {
+        padding-bottom: 15px;
+        list-style: none;
+        li {
+          padding: 15px 0;
+          margin-bottom: 0;
+          @include font-size(14, 20);
+          border-top: 1px solid $pricing-separator-border;
+          i {
+            position: relative;
+            top: 0;
+            @include margin-end(5px);
+          }
+        }
+      }
+      .dima-button {
+        margin-bottom: 0;
+      }
+    }
+    &.featured {
+      z-index: 99;
+      .header {
+        background: $theme-color;
+        color: #fff;
+      }
+    }
+    &.featured-larg {
+      z-index: 999;
+      margin-top: -20px;
+      .header {
+        background: $theme-color;
+        color: #fff;
+        padding: 25px 5px;
+      }
+      .dima-pricing-col-info {
+        padding-bottom: 30px;
+        .icon-list {
+          padding-bottom: 35px;
+        }
+      }
+    }
+    &.featured-larg, &.featured {
+      .dima-pricing-row {
+        color: $theme-color;
+      }
+    }
+    .header {
+      position: relative;
+      background-color: $pricing-header-bg;
+      padding: 15px 5px;
+      margin: 0 0 -1px 0;
+      @include margin-start(-1px);
+      letter-spacing: 0;
+      .dima-table-title {
+        @include font-size(18, 20);
+        color: #fff;
+        letter-spacing: 0;
+        margin-bottom: 0;
+      }
+
+      //Color
+      @each $ClassNmae, $color in $button-color {
+        &.#{$ClassNmae} {
+          background-color: $color;
+          color: $default-btn-color;
+        }
+      }
+    }
+    .dima-pricing-row {
+      display: block;
+      @include font-size(18, 15);
+      padding-bottom: 30px;
+      color: $header-font-color;
+      .pricing {
+        position: relative;
+        @include font-size(36, 36);
+        font-weight: $font-weight-semibold;
+        .currency {
+          @include font-size(18, 18);
+          font-weight: $p-weight;
+          position: absolute;
+          top: 6px;
+          @include start(-12px);
+        }
+      }
+      .interval {
+        @include font-size(16, 16);
+      }
+      @each $ClassNmae, $color in $button-color {
+        &.#{$ClassNmae} {
+          color: $color;
+        }
+      }
+    }
+    &.dima-offers {
+      margin: 0;
+      @include border-start(none !important);
+      .dima-pricing-col-info {
+        border: none;
+        margin-top: 117px;
+        @include box-shadow(none);
+        background: transparent;
+      }
+    }
+  }
+}
+
+.rating {
+  font-family: $FontAwesome;
+  overflow: hidden;
+  span {
+    display: inline !important;
+    @include margin-end(2px);
+    &:last-child {
+      @include margin-end(0px);
+    }
+  }
+  span:before {
+    content: "\f005";
+    color: $theme-color;
+    @include font-size(18, 18);
+  }
+  &.undertitle {
+    span: before {
+      color: #FFF;
+    }
+  ;
+  }
+  span.star:before {
+    content: "\f006";
+    color: $theme-color;
+  }
+  span.half-star:before {
+    content: "\f123";
+    color: $theme-color;
+  }
+  &.undertitle {
+    span.star:before {
+      color: #FFF;
+    }
+  }
+}

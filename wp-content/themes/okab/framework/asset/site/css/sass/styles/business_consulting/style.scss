@@ -1,0 +1,35 @@
+@charset "UTF-8";
+/*------------------------------------------------------------------
+[Master Stylesheet]
+
+Project:	 PixelDIma OKAB
+Version:	 1.0
+Primary use: Business Demo
+Style:       Light
+Direction :  LTR
+-------------------------------------------------------------------*/
+
+@import "../../extensions/modular-scale";
+
+@import "../../base/demo/business_consulting/all_ltr";
+@import "../../base/all";
+@import "../../vendor/reset";
+
+@import "../../vendor/animate";
+@import "../../vendor/magnific-main";
+@import "../../vendor/owl.carousel";
+@import "../../vendor/flexslider";
+@import "../../vendor/perfect-scrollbar";
+@import "../../typography/all";
+@import "../../layout/all";
+@import "../../navbar/all";
+@import "../../protfolio/all";
+@import "../../blog/all";
+@import "../../ui/all";
+@import "../../help/utility";
+@import "../../help/helpclasses";
+@import "../../help/wp";
+@import "../../queries/media-queries";
+@import "../../queries/media-queries-vertical";
+@import "../../custom/business_consulting";
+@import "../../custom/global";

@@ -1,0 +1,505 @@
+$testimonial-text-size: $base-font-size + 10;
+$testimonial-line-height: $testimonial-text-size + 6;
+.dima-testimonial {
+  position: relative;
+  margin-bottom: 20px;
+  display: inline-block;
+  width: 100%;
+
+  &.quote-style {
+    blockquote .quote-content p {
+      font-size: px-to-rem($testimonial-text-size);
+      line-height: px-to-rem($testimonial-line-height);
+      font-weight: $font-weight-light;
+    }
+  }
+
+  &.testimonial-side {
+    position: relative;
+
+    blockquote {
+      background: $testimonial-bg;
+      border: 1px solid $border-color;
+      padding: px-to-rem(30);
+      width: 100%;
+    }
+
+    .dima-testimonial-image {
+      margin-top: px-to-rem(30);
+    }
+  }
+
+  blockquote {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    @if $border-radius != 0 {
+      @include border-radius($border-radius);
+    }
+
+    &:before {
+      font-size: px-to-em($testimonial-text-size);
+      line-height: px-to-em($testimonial-line-height, $testimonial-text-size);
+      content: "\f10d";
+      font-family: "FontAwesome";
+      color: $theme-color;
+      vertical-align: -0.4em;
+      @include float_start();
+      @include margin-end(px-to-rem(20));
+      margin-top: px-to-rem(7);
+      font-style: normal;
+    }
+
+    @include border-start(none);
+    @include padding-start(0);
+
+    .quote-content {
+      overflow: hidden;
+      p {
+        @include font-size(18, 30);
+        font-style: italic;
+        margin-bottom: 0;
+      }
+
+      .dima-testimonial-meta {
+        font-size: px-to-em($base-font-size);
+        line-height: px-to-em($base-line-height, $base-font-size);
+        display: block;
+        margin-top: px-to-rem(10);
+        font-style: normal;
+        strong {
+          @extend %h6;
+          color: $header-font-color;
+        }
+      }
+    }
+
+    &.without-icon {
+      &:before {
+        content: "";
+        @include margin-end(0);
+      }
+    }
+  }
+
+  &.quote-start, &.quote-end,
+  &.quote-top-center-arrow, &.quote-start-top,
+  &.quote-end-top,
+  &.quote-start-bottom,
+  &.quote-end-bottom, &.quote-top-bottom,
+  &.quote-bottom-center-arrow {
+    .dima-testimonial-image {
+      margin-top: px-to-rem(9);
+      border: 2px solid $border-color;
+      width: px-to-rem(80);
+      height: px-to-rem(80);
+      background-repeat: no-repeat;
+      background-position: center !important;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      background-size: cover;
+    }
+  }
+
+  &.quote-start {
+    .dima-testimonial-image {
+      @extend .start-image;
+    }
+  }
+
+  &.quote-end {
+    .dima-testimonial-image {
+      @extend .end-image;
+      @include margin-end(0);
+    }
+  }
+
+  .dima-testimonial-image {
+    @extend .start-image;
+    margin-top: px-to-rem(9);
+    border: 2px solid $border-color;
+  }
+
+  .rating span:before {
+    color: #FFFFFF;
+  }
+}
+
+.quote-text {
+  font-size: 1em;
+  @include border-start(none);
+  font-style: italic;
+  position: relative;
+  margin-bottom: px-to-rem(30);
+  .dima-testimonial-image {
+    margin-top: px-to-rem(20) !important;
+  }
+
+  &.quote-start {
+    blockquote {
+      width: auto;
+    }
+
+    &:before {
+      top: 54px;
+      @include end(auto);
+      @include start(86px);
+      @include border-end-color($testimonial-bg);
+    }
+
+    &:after {
+      top: 55px;
+      @include end(auto);
+      @include start(85px);
+      @include border-end-color($border-color);
+    }
+  }
+
+  &.quote-end {
+    blockquote {
+      width: auto;
+    }
+
+    &:before {
+      top: 54px;
+      @include start(auto);
+      @include end(85.5px);
+      @include border-start-color($testimonial-bg);
+    }
+
+    &:after {
+      top: 55px;
+      @include start(auto);
+      @include end(84.5px);
+      @include border-start-color($border-color);
+    }
+  }
+
+  &.quote-start-bottom {
+    &:before {
+      top: auto;
+      @include end(auto);
+      bottom: 75px;
+      @include start(30px);
+      border-top-color: $testimonial-bg;
+    }
+
+    &:after {
+      top: auto;
+      @include end(auto);
+      bottom: 75px;
+      @include start(31px);
+      border-top-color: $border-color;
+    }
+  }
+
+  &.quote-end-bottom {
+    .dima-testimonial-image {
+      @include float-end;
+      @include margin-end(0px);
+    }
+
+    &:before {
+      top: auto;
+      @include start(auto);
+      @include end(30px);
+      @include margin-end(-4px);
+      bottom: 75px;
+      border-top-color: $testimonial-bg;
+    }
+
+    &:after {
+      top: auto;
+      @include start(auto);
+      @include end(27px);
+      bottom: 75px;
+      border-top-color: $border-color;
+    }
+  }
+
+  &.quote-start-top {
+    margin-top: 25px;
+    .dima-testimonial-image {
+      @include float-start;
+      @include margin-start(0px);
+      margin-bottom: 20px;
+      margin-top: 0 !important;
+    }
+    blockquote {
+      @include float-start;
+    }
+
+    &:before {
+      bottom: auto;
+      top: 74px;
+      @include end(auto);
+      @include start(25px);
+      @include margin-end(0);
+      border-bottom-color: $testimonial-bg;
+    }
+
+    &:after {
+      bottom: auto;
+      top: 74px;
+      @include end(auto);
+      @include start(26px);
+      border-bottom-color: $border-color;
+    }
+  }
+
+  &.quote-end-top {
+    margin-top: 25px;
+    .dima-testimonial-image {
+      @include float-end;
+      @include margin-end(0px);
+      margin-bottom: 20px;
+      margin-top: 0 !important;
+    }
+
+    blockquote {
+      @include float-end;
+    }
+
+    &:before {
+      bottom: auto;
+      top: 74px;
+      @include start(auto);
+      @include end(25.5px);
+      @include margin-start(0);
+      border-bottom-color: $testimonial-bg;
+    }
+
+    &:after {
+      bottom: auto;
+      top: 74px;
+      @include start(auto);
+      @include end(26px);
+      border-bottom-color: $border-color;
+    }
+  }
+
+  &.quote-top-center {
+    .dima-testimonial-image {
+      display: block;
+      position: relative;
+      margin-bottom: 20px;
+      margin-top: 0 !important;
+      @include start(50%);
+      @include margin-start(-40px);
+    }
+
+    blockquote {
+      @include float-end;
+      width: 100%;
+    }
+  }
+
+  &.quote-bottom-center {
+    .dima-testimonial-image {
+      display: block;
+      position: relative;
+      margin-top: 20px !important;
+      margin-bottom: 0 !important;
+      @include start(50%);
+      @include margin-start(-40px);
+    }
+
+    blockquote {
+      @include float-end;
+      width: 100%;
+    }
+  }
+
+  &.no-arrow {
+    &.quote-start-bottom,
+    &.quote-end-bottom {
+      .dima-testimonial-image {
+        margin-bottom: 0 !important;
+        margin-top: 20px !important;
+      }
+    }
+  }
+
+  &.no-arrow {
+    &:before, &:after {
+      display: none;
+    }
+
+    .dima-testimonial-image {
+      margin-top: 0 !important;
+    }
+  }
+
+  &.quote-top-center-arrow {
+    .dima-testimonial-image {
+      display: block;
+      position: relative;
+      margin-bottom: 20px !important;
+      margin-top: 0 !important;
+      @include start(50%);
+      @if ($global-direction == "rtl") {
+        transform: translate(50%, 0);
+      } @else {
+        transform: translate(-50%, 0);
+      }
+    }
+
+    blockquote {
+      @include float-end;
+      width: 100%;
+    }
+
+    &:before {
+      bottom: auto;
+      top: 75px;
+      @include start(auto);
+      @include end(47%);
+      @include margin-start(0);
+      border-bottom-color: $testimonial-bg;
+    }
+
+    &:after {
+      bottom: auto;
+      top: 75px;
+      @include start(auto);
+      @include end(47.1%);
+      border-bottom-color: $border-color;
+    }
+  }
+
+  &.quote-bottom-center-arrow {
+    .dima-testimonial-image {
+      display: block;
+      position: relative;
+      margin-top: 20px !important;
+      margin-bottom: 0 !important;
+      @include start(50%);
+      @include margin-start(-40px);
+    }
+
+    blockquote {
+      @include float-end;
+    }
+
+    &:before {
+      top: auto;
+      bottom: 75px;
+      @include start(auto);
+      @include end(47%);
+      @include margin-start(0);
+      border-top-color: $testimonial-bg;
+    }
+
+    &:after {
+      top: auto;
+      bottom: 75px;
+      @include start(auto);
+      @include end(47.1%);
+      border-top-color: $border-color;
+    }
+  }
+
+  &:before {
+    border: solid 14px transparent;
+    z-index: 3;
+  }
+
+  &:before, &:after {
+    content: "";
+    display: block;
+    height: 0;
+    width: 0;
+    position: absolute;
+  }
+
+  &:after {
+    border: solid 13px transparent;
+    z-index: 2;
+  }
+}
+
+.owl-item {
+  .dima-testimonial {
+    margin-bottom: 0 !important;
+  }
+}
+
+.dima-testimonial {
+  &.dima-theme-testimonial {
+    &.quote-start {
+      &:after,
+      &:before {
+        @include border-end-color($theme-color);
+      }
+    }
+    &.quote-start-bottom,
+    &.quote-end-bottom,
+    &.quote-bottom-center-arrow {
+      &:after,
+      &:before {
+        border-top-color: $theme-color;
+      }
+    }
+    &.quote-end-top,
+    &.quote-start-top,
+    &.quote-top-center-arrow {
+      &:after,
+      &:before {
+        border-bottom-color: $theme-color;
+      }
+    }
+    &.quote-end {
+      &:after,
+      &:before {
+        @include border-start-color($theme-color);
+      }
+    }
+
+    blockquote {
+      background: $theme-color;
+      border-color: $theme-color;
+      p {
+        color: rgba(255, 255, 255, .8);
+      }
+      .dima-testimonial-meta {
+        span {
+          color: rgba(255, 255, 255, .8);
+        }
+        a strong {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+}
+
+.dark-bg {
+  .no-arrow {
+    .quote-content {
+      .dima-testimonial-meta strong {
+        color: #ffffff;
+      }
+      .dima-testimonial-meta {
+        span {
+          color: rgba(255, 255, 255, 0.8);
+        }
+      }
+      p {
+        color: rgba(255, 255, 255, 0.8);
+      }
+    }
+  }
+}
+
+@include break(xsd-min) {
+  .quote-start,
+  .quote-end {
+    .dima-testimonial-image {
+      display: none;
+    }
+    &:after,
+    &:before {
+      border-right: none;
+    }
+  }
+}

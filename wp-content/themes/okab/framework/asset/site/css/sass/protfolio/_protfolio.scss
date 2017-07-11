@@ -1,0 +1,163 @@
+////******************************************************************************************/
+// PROTFOLIO /
+////******************************************************************************************/
+
+$protfolio-border: 0px;
+
+.dima-isotope-container {
+  &.isotope-with-margin {
+    margin: 0 -15px;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    .isotope-item {
+      border-top: 0 solid transparent;
+      @include border-end(15px solid transparent);
+      @include border-start(15px solid transparent);
+      border-bottom: 30px solid transparent;
+      background-clip: padding-box;
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.isotope-item {
+  overflow: hidden;
+  @include border-start($protfolio-border solid #fff);
+  border-bottom: $protfolio-border solid #fff;
+  @include box-sizing(content-box);
+  margin: 0;
+  padding: 0 !important;
+  &[class*="ok-"] {
+    margin-bottom: 0;
+  }
+  .work-item {
+    width: 100%;
+    z-index: 45;
+    position: relative;
+    img {
+      @include box-shadow(inset 0px -10px 0px #fff);
+      width: 100%;
+      @if $border-radius != 0 {
+        @include border-radius($border-radius);
+      }
+    }
+
+    &.title-style {
+      .work-info {
+        .cat-sep {
+          position: relative;
+          width: 60px;
+          border-top: 1px solid #fff;
+          display: block;
+          margin: 5px auto;
+          transition: opacity 0.35s, transform 0.35s;
+        }
+      }
+
+      .porftfolio-cat {
+        margin: 0;
+        padding: 0 20px;
+        color: #ffffff;
+
+        li {
+          display: inline-block;
+          a {
+            color: #ffffff;
+            &:hover {
+              color: #ffffff;
+            }
+          }
+
+          &:last-child {
+            .sep {
+              display: none;
+            }
+          }
+        }
+
+      }
+    }
+
+  }
+  .work-info {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
+    @include transition(all 0.2s ease-in);
+    top: 50%;
+    margin-top: 0;
+    z-index: 10;
+    .work-title {
+      width: 100%;
+      display: inline-block;
+      a, p {
+        font-size: 18px;
+        font-weight: $h-weight;
+        color: #fff;
+        margin: 0 auto;
+        width: 95%;
+      }
+      span {
+        font-size: 14px;
+        font-weight: $font-weight-light;
+        color: #fff;
+      }
+    }
+  }
+  .post-img {
+    &:hover {
+      .link_overlay {
+        background: $theme-color;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.post-img {
+  &:hover {
+    .link_overlay {
+      background: $theme-color;
+      opacity: 1;
+    }
+  }
+}
+
+////****************************/
+//   Cases 4 Column Portfolio   //
+////****************************/
+
+.column_4 {
+  display: block;
+  .work-info {
+    padding: 10px;
+    .work-title {
+      p {
+        @include font-size(16, 18);
+      }
+
+      span {
+        display: none;
+      }
+    }
+    .work-love {
+      width: 20%;
+      .heart {
+        color: $theme-color;
+        font: (18px / 32px) $FontAwesome;
+      }
+      span {
+        color: $theme-color;
+      }
+    }
+  }
+}
+
+.related-portfolio {
+  background: $section-bg-color;
+  .related-portfolio-title {
+    text-align: center;
+    margin-bottom: 70px;
+  }
+}

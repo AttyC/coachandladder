@@ -1,0 +1,124 @@
+//*---[Theme Color]---*/
+$theme-color: #ffffff;
+$border-color: #363636;
+$second-border-color: #2f2f2f;
+
+// [User Interface Colors]
+$body-bg-color: #252525;
+$content-bg-color: #252525;
+$section-bg-color: #2b2b2b; //in prices tables style two
+$box-bg-color: #2b2b2b;
+
+// [Typo Colors]
+$header-font-color: #707070;
+$header-link-color: #707070;
+$body-text-color: #a1a1a1;
+$body-link-color: $theme-color;
+$body-link-hover-color: darken($body-link-color, 15%);
+
+// [Blog  Colors]
+$blog-bg-color: $content-bg-color;
+$blog-text-color: $body-text-color;
+$blog-header-color: $header-font-color;
+$widget-bg-color: $blog-bg-color;
+$widget-border-color: $second-border-color;
+$blog-border-color: $border-color;
+$box-bg: #252525;
+
+// [menu Colors]
+$topbar-bg-color: $section-bg-color;
+$topbar-text-color: $body-text-color;
+$topbar-icon-text-color: $header-font-color;
+$nav-bg-color: #252525;
+$nav-bg-color-top-style: #252525;
+$nav-text-color: $header-font-color;
+$nav-text-hover-color: $theme-color;
+$nav-shadow: rgba(161, 161, 161, 0.25);
+
+// Vertical menu
+$navbar-vertical-bg: #252525;
+$navbar-vertical-bordre-color: $widget-border-color;
+
+//Response Menu Icon*/
+$bt-color: #252525;
+$bt-bg-color: #FFFFFF;
+$bt-bg-hover: #252525;
+
+// [Search Box Colors]
+$search-box-bg: $theme-color;
+$search-box-text: #FFFFFF;
+
+// [Container Title (bottom of the header)]
+$title_con_bg: #FFFFFF;
+$title_con_color: #707070;
+
+// [Divider Colors]
+$hr-color: $border-color;
+
+//  Button
+$radius-var: 0;
+$btn-border-color: $theme-color;
+$default-btn-bg-color: $theme-color;
+$default-btn-color: #fff;
+$border: 1px;
+$btn_bg_header: $header-font-color;
+
+// --- colors fill---*/
+$fill-btn-color: #fff;
+$fill-btn-color-hover: #fff;
+
+// --- colors stroke---*/
+$btn-stroke-color: $btn-border-color;
+$btn-stroke-color-hover: #fff;
+
+// [Tabs Colors]
+$tab-nav-bg: $section-bg-color;
+$tab-nav-bg-active: #FFFFFF;
+$tab-nav-color: $header-font-color;
+$tab-nav-color-active: $nav-text-color;
+$tab-nav-border-color: $hr-color;
+$tab-cnt-bg: #FFFFFF;
+
+// [Code Colors]
+$code-color: $body-text-color;
+$code-bg: $section-bg-color;
+$pre-bg: $section-bg-color;
+
+// PRICING TABLE
+$pricing-body-bg: #FFFFFF;
+$pricing-header-bg: $header-font-color;
+$pricing-button-bg: $pricing-header-bg;
+$pricing-separator-border: $widget-border-color;
+
+// [Alert Colors]
+$info-color: #3375ff;
+$error-color: #e81a27;
+$warning-color: #f9c00c;
+$success-color: #53cf00;
+
+// [Tooltips Colors]
+$tooltip-bg: #1c1c1a;
+$tooltip-color: #FFFFFF;
+$tooltip-boredr-color: $tooltip-bg;
+
+// [Quote  Color]
+$quote-bg: $header-font-color;
+$quote-text-color: #FFFFFF;
+
+// [Testimonial Color]
+$testimonial-bg: #FFFFFF;
+
+// Footer Colors
+//Bottom Footer
+$footer-bg-bottom: #202020;
+$footer-bottom-color: #a1a1a1;
+$footer-bg-top: #252525;
+$footer-color: #707070;
+$footer-link: #a1a1a1;
+$footer-header-color: #FFFFFF;
+$footer-bordre-color: #373737;
+
+//media
+$media-bg: $section-bg-color;
+$media-color: $body-text-color;
+$media-border: $border-color;

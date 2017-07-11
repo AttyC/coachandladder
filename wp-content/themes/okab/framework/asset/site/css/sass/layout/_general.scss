@@ -1,0 +1,93 @@
+.boxed {
+  background-color: $content-bg-color;
+}
+
+.both-sidebar {
+  .dima-container {
+    width: 48.5%;
+    @include margin-start(30px);
+  }
+
+  .dima-sidebar {
+    width: 22.75%;
+  }
+}
+
+.mini-sidebar {
+  .dima-sidebar {
+    width: 22.75%;
+  }
+
+  .dima-container {
+    width: 74.25%;
+  }
+}
+
+.dima-team-content {
+  padding: 1em;
+  padding-top: 30px;
+}
+
+.dima-container {
+  width: 70.5%;
+
+  &.full {
+    width: 100%;
+  }
+}
+
+.mini-width {
+  position: relative;
+  width: 66.66667%;
+  margin: 0 auto;
+}
+
+.all_content {
+  display: table;
+  width: 100%;
+  height: 100%;
+  table-layout: fixed;
+  position: relative;
+  background: $content-bg-color;
+}
+
+.boxed {
+  background-color: $box-bg-color;
+
+  &.framed {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .all_content {
+    @include box-shadow(0 0.15em 0.35em 0 rgba(0, 0, 0, 0.135));
+  }
+
+  .dima-content {
+    padding: 1.5em;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+}
+
+.vertical-menu .container {
+  width: 85%;
+  padding: 0;
+  .page-section-content {
+    .container {
+      width: 100%;
+    }
+  }
+}
+
+@include break(sd-min-sd-max) {
+  .mini-width {
+    width: 100%;
+  }
+}
+
+@include break(sd-min) {
+  .mini-width {
+    width: 100%;
+  }
+}

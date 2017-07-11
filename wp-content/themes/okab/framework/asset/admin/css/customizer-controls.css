@@ -1,0 +1,450 @@
+@font-face {
+    font-family: 'FontAwesome';
+    src: url('../../../asset/site/fonts/fontawesome-webfont.eot');
+    src: url('../../../asset/site/fonts/fontawesome-webfont.eot?#iefix') format('embedded-opentype'),
+    url('../../../asset/site/fonts/fontawesome-webfont.ttf') format('truetype'),
+    url('../../../asset/site/fonts/fontawesome-webfont.woff') format('woff'),
+    url('../../../asset/site/fonts/fontawesome-webfont.svg#ETmodules') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*=====================
+        013. GLOBAL
+=======================*/
+#customize-controls img {
+    width: auto;
+    max-width: 95%;
+    display: block;
+    padding: 5px;
+    margin: 0 auto;
+}
+
+.widget-rendered.customize-control {
+    margin-bottom: 2px;
+}
+
+/* < disabled > */
+.dima-customize-disabled {
+    opacity: 0.3;
+}
+
+.customize-control {
+    margin-bottom: 21px;
+}
+
+.dima-customize-toggel {
+    position: absolute;
+    right: 5px;
+}
+
+.dima-customize-toggel:focus {
+    box-shadow: none;
+}
+
+.description.customize-control-description {
+    background: #FFFFFF;
+    padding: 10px;
+}
+
+/*================
+     01. Slider
+==================*/
+
+.customize-control-slider input[type="text"] {
+    float: left;
+    width: 19%;
+    margin-right: 5%;
+    text-align: center;
+    border-radius: 3px;
+}
+
+.customize-control-slider .dima-slider {
+    position: relative;
+    float: left;
+    width: 75%;
+    height: 5px;
+    margin-top: 20px;
+    background-color: #e1f1f0;
+    cursor: pointer;
+}
+
+.customize-control-slider .dima-slider .ui-slider-handle {
+    position: absolute;
+    top: -5px;
+    z-index: 2;
+    width: 15px;
+    height: 15px;
+    margin-left: -5px;
+    background-color: #0277bd;
+    border-radius: 100em;
+}
+
+.customize-control-slider .dima-slider .ui-slider-handle:focus {
+    outline: 0;
+}
+
+/*=====================
+     02. radio button set
+=======================*/
+.ui-button:focus, .ui-button:hover,
+.customize-control-radio-buttonset label {
+    padding: 5px 10px;
+    background: #E1EFF7;
+    border-left: none;
+    display: initial;
+    box-shadow: none;
+    color: #0277BD;
+}
+
+.customize-control-radio-buttonset label.ui-state-active {
+    background: #0277BD;
+    color: #FFFFFF;
+}
+
+.ui-button {
+    border: none;
+}
+
+.ui-button:focus, .ui-button:hover {
+    border-color: #0288d1;
+}
+
+.customize-control-radio-buttonset label.ui-corner-left {
+    border-radius: 3px 0 0 3px;
+    border-right: 0;
+}
+
+.customize-control-radio-buttonset label.ui-corner-right {
+    border-radius: 0 3px 3px 0;
+}
+
+/**
+ * Alpha color
+ */
+.dima-alpha-container .transparency {
+    height: 24px;
+    width: 100%;
+    background: url(../../../images/transparency-grid.png) #FFFFFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4) inset;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    padding: 0;
+}
+
+.dima-alpha-container .ui-slider-handle {
+    color: #777;
+    background-color: #FFF;
+    text-shadow: 0 1px 0 #FFF;
+    text-decoration: none;
+    position: absolute;
+    z-index: 2;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: 1px solid #aaa;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    opacity: 0.9;
+    margin-top: -2px;
+    height: 20px;
+    cursor: ew-resize;
+    font-size: 12px;
+    padding: 3px;
+}
+
+.dima-alpha-container .ui-slider {
+    position: relative;
+    text-align: center;
+    width: 88%;
+}
+
+.wp-picker-container a.wp-picker-open ~ div.dima-alpha-container {
+    display: block;
+}
+
+.dima-alpha-container {
+    box-sizing: padding-box;
+    display: none;
+    border: 1px solid #dfdfdf;
+    border-top: none;
+    background: #FFF;
+    padding: 0 11px 6px;
+}
+
+.customize-control-alphacolor .wp-picker-container .iris-picker {
+    border-bottom: none;
+}
+
+.dima-customize-subtitle {
+    display: block;
+    margin: 15px -20px 10px -20px;
+    border-top: 2px solid #E1EFF7;
+}
+
+[data-hide] {
+    display: none !important;
+}
+
+.customize-control-radio label {
+    line-height: 18px;
+    font-size: 13px;
+    padding: 5px 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: block;
+    font-weight: 400;
+    opacity: .8;
+}
+
+.wp-picker-container, .wp-picker-input-wrap {
+    width: 100%;
+}
+
+.wp-color-result {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 0 0 0 40px;
+    box-shadow: inset 0 0 1px rgba(0, 0, 0, .5) !important;
+    -webkit-box-shadow: inset 0 0 1px rgba(0, 0, 0, .5) !important;
+    border: none;
+    height: 30px;
+    border-radius: 2px;
+    margin: 0;
+}
+
+.wp-color-result:focus:after, .wp-color-result:hover:after {
+    color: #23282d;
+    border-color: #a0a5aa;
+    border-left: 1px solid #999;
+}
+
+.wp-color-result:after {
+    background-color: rgba(0, 0, 0, .2);
+    color: #fff;
+    height: 30px;
+    line-height: 30px;
+    border: none;
+    box-shadow: none;
+    font-size: 12px;
+    border-radius: 0 4px 4px 0;
+    padding: 0 15px;
+}
+
+.result:hover, .wp-color-result:focus:after, .wp-color-result:hover:after {
+    color: #fff;
+    border: none;
+}
+
+.wp-core-ui .button-group.button-small .button, .wp-core-ui .button.button-small,
+.wp-picker-container input[type=text].wp-color-picker, .wp-core-ui .wp-picker-default {
+    width: 45% !important;
+    vertical-align: bottom;
+    margin-top: 10px;
+}
+
+.wp-core-ui .wp-picker-default {
+    margin-left: 10%;
+}
+
+.customize-control select {
+    height: 42px;
+}
+
+input, select, input[type=checkbox], input[type=text], input[type=number] {
+    border: 2px solid #e1eff7;
+    margin-left: 0;
+    box-shadow: none;
+    border-radius: 5px;
+    background: #FFFFFF;
+    font-size: 14px;
+    padding: 10px;
+    line-height: 16px;
+    outline: none;
+    color: #0288d1;
+}
+
+input, select, input[type=text], input[type=number] {
+    height: 40px;
+}
+
+.control-section .accordion-section-title:after {
+    top: 22px;
+    font-size: 16px;
+}
+
+.control-section .accordion-section-title {
+    padding: 20px 10px 20px 14px;
+}
+
+/*Font Style*/
+input.dima_font_style_checkbox {
+    display: none;
+}
+
+span.dima_customize_font_style {
+    display: inline-block;
+    cursor: pointer;
+}
+
+span.dima_customize_font_style {
+    margin-left: 0;
+    border-radius: 5px;
+    box-shadow: none;
+    background: #FFFFFF;
+    float: left;
+    width: 50px;
+    height: 50px;
+    margin-right: 4%;
+    text-align: center;
+    font-size: 14px;
+    line-height: 50px;
+    border: 2px solid #E1EFF7;
+    color: #E1EFF7;
+}
+
+input[type=checkbox], input[type=radio] {
+    border: 1px solid #b3d6eb;
+    background: #fff;
+    color: #0277bd;
+}
+
+span.dima_customize_font_style.dima_font_style_checkbox {
+    background: #2E86B9;
+}
+
+span.dima_customize_font_style.dima_font_style_checkbox:before {
+    color: #FFFFFF;
+}
+
+.customize-control-radio .customize-control-title {
+    margin-bottom: 5px;
+}
+
+span.dima_customize_font_style:before {
+    font-family: 'FontAwesome';
+    font-size: 18px;
+    color: #0277bd;
+    line-height: 40px;
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+span.dima_customize_font_style.dima_customize_font_value_bold:before,
+span.dima_customize_font_style.dima_font_style_checkbox.dima_customize_font_value_bold:before {
+    content: "\f032";
+}
+
+span.dima_customize_font_style.dima_customize_font_value_italic:before,
+span.dima_customize_font_style.dima_font_style_checkbox.dima_customize_font_value_italic:before {
+    content: "\f033";
+}
+
+span.dima_customize_font_style.dima_customize_font_value_uppercase:before,
+span.dima_customize_font_style.dima_font_style_checkbox.dima_customize_font_value_uppercase:before {
+    content: "\f031";
+}
+
+span.dima_customize_font_style.dima_customize_font_value_underline:before,
+span.dima_customize_font_style.dima_font_style_checkbox.dima_customize_font_value_underline:before {
+    content: "\f0cd";
+}
+
+/*Radio Image*/
+
+.customize-control-radio-image .label_radio_image {
+    display: inline-block;
+    opacity: 0.5;
+}
+
+.customize-control-radio-image input {
+    display: none;
+}
+
+.label_radio_image.dima_radio_image_checkbox {
+    opacity: 1;
+}
+
+/**/
+.wp-full-overlay-sidebar {
+    background: #FFFFFF;
+}
+
+#customize-controls .customize-info .accordion-section-title {
+    background: #0288d1;
+    color: #FFFFFF;
+    padding: 10px 10px 11px 14px;
+}
+
+#customize-theme-controls .accordion-section-title {
+    border-color: #f0f7fb;
+    font-weight: 400;
+}
+
+#customize-theme-controls .accordion-section-title {
+    color: #0277bd;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+#customize-controls .panel-meta.customize-info .accordion-section-title:hover {
+    background: #0288d1;
+    color: #FFFFFF;
+}
+
+.customize-screen-options-toggle {
+    color: #FFFFFF;
+}
+
+.accordion-section-title:after, .handlediv, .item-edit, .sidebar-name-arrow, .widget-action {
+    color: #74a7d2;
+}
+
+#customize-theme-controls .control-section .accordion-section-title:focus:after, #customize-theme-controls .control-section .accordion-section-title:hover:after, #customize-theme-controls .control-section.open .accordion-section-title:after, #customize-theme-controls .control-section:hover > .accordion-section-title:after {
+    color: #3291c9;
+}
+
+#customize-controls .control-section .accordion-section-title:focus, #customize-controls .control-section .accordion-section-title:hover, #customize-controls .control-section.open .accordion-section-title, #customize-controls .control-section:hover > .accordion-section-title {
+    color: #3291c9;
+    background: #f0f7fb;
+}
+
+#customize-controls .customize-info .customize-help-toggle {
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.customize-controls-close:focus, .customize-controls-close:hover, .customize-controls-preview-toggle:focus, .customize-controls-preview-toggle:hover {
+    background: #f0f7fb;
+    color: #0277bd;
+    border-right: 1px solid #F0F7FB;
+
+}
+
+.customize-controls-close {
+    background: #FFF;
+    border: none;
+    border-right: 1px solid #F0F7FB;
+    color: #0277bd;
+}
+
+.customize-panel-back:focus, .customize-panel-back:hover, .customize-section-back:focus, .customize-section-back:hover,
+.customize-panel-back, .customize-section-back {
+    background: #0277bd;
+    color: #FFFFFF;
+    border-right: none;
+}
+
+.customize-section-title {
+    background: #0288d1;
+    color: #FFFFFF;
+}
+
+.customize-section-title h3, h3.customize-section-title {
+    color: #FFFFFF;
+}
+
+#customize-theme-controls .accordion-section-content {
+    color: #0277bd;
+}

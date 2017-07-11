@@ -1,0 +1,104 @@
+.dima-callout {
+  overflow: hidden;
+  position: relative;
+  border: 1px solid $border-color;
+  padding: 55px;
+  @include transition(all 0.2s ease-in);
+  display: table;
+  box-sizing: border-box;
+  width: 100%;
+  z-index: 40;
+
+  .p-callout, p {
+    color: $body-text-color;
+    @include font-size(16, 25);
+    margin-bottom: 0;
+  }
+
+  &.dima-full-callout {
+    padding: 55px 0;
+  }
+}
+
+.dima-callout-clm2,
+.dima-callout-clm1 {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.dima-callout-clm1 {
+  width: 75%;
+}
+
+.dima-callout-clm2 {
+  width: 25%;
+}
+
+.h-callout {
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-weight: $h3_weight;
+  z-index: 10;
+}
+
+.p-callout {
+  position: relative;
+  color: inherit;
+  z-index: 10;
+}
+
+.b-callout {
+  margin-top: 20px;
+
+  @include float-end;
+
+  z-index: 10;
+}
+
+.hover-callout {
+
+  &:hover {
+    .h-callout, .p-callout, p {
+      color: #FFF;
+    }
+    background: $theme-color;
+    border-color: rgba(0, 0, 0, 0);
+  }
+}
+
+.dima-banner {
+  .banner-inner {
+    white-space: normal;
+    z-index: 100;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: 0 auto;
+    &.start {
+      @include end(auto);
+      @include start(10%);
+    }
+    &.end {
+      @include start(auto);
+      @include end(10%);
+    }
+
+  }
+}
+
+@include break(sd-min) {
+  .dima-callout {
+    .dima-callout-clm2,
+    .dima-callout-clm1 {
+      display: block;
+      width: 100%;
+      text-align: center;
+    }
+    .dima-callout-clm2 {
+      margin-top: 30px;
+    }
+  }
+}

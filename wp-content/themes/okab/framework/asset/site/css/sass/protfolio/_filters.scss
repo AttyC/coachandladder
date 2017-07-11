@@ -1,0 +1,87 @@
+// Menu of categories filters
+.filters {
+  display: block;
+  text-align: center;
+  overflow: hidden;
+  margin-bottom: 50px;
+  ul {
+    padding: 0;
+    margin: 0;
+    li {
+      cursor: pointer;
+      a {
+        color: $header-font-color;
+        font-weight: $p-weight;
+        height: auto;
+        @include transition(all .2s ease-in);
+        box-shadow: none;
+        &:hover {
+          color: $theme-color;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+}
+
+//  Style Two
+.filters-box {
+  &.filters {
+    ul {
+      border: none;
+      li {
+        display: inline-block;
+        padding: 0 4px 4px 4px;
+        a {
+          border: 1px solid $border-color;
+          padding: 0.75em 1em;
+          @include font-size(14, 14);
+          display: inline-block;
+          background: $section-bg-color;
+          @if ($border-radius!=0) {
+            @include border-radius($border-radius);
+          }
+          width: 100%;
+          &:hover {
+            border: 1px solid $theme-color;
+            color: #FFF;
+            background: $theme-color;
+          }
+        }
+      }
+      .current {
+        a {
+          border: 1px solid $theme-color;
+          color: #FFF;
+          background: $theme-color;
+        }
+      }
+    }
+  }
+}
+
+@include break(sd-min) {
+  .filters-box.filters ul {
+    border: none;
+    margin: 0 auto;
+    width: 95%;
+    li {
+      display: inline-block;
+      @include float_start();
+      width: 32%;
+    }
+  }
+}
+
+@include break(xsd-min) {
+  .filters-box {
+    &.filters {
+      margin: 0 -10px 40px -10px;
+      ul li {
+        display: inline-block;
+        @include float_start();
+        width: 49%;
+      }
+    }
+  }
+}

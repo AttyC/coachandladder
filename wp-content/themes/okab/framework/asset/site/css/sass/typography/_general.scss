@@ -1,0 +1,237 @@
+%h1 {
+  font-size: px-to-em($h1);
+  line-height: 1.2em;
+  letter-spacing: 0.05em;
+  font-weight: $h2-weight;
+}
+
+%h2 {
+  font-size: px-to-em($h2);
+  line-height: 1.25em;
+  font-weight: $h2-weight;
+}
+
+%h3 {
+  font-size: px-to-em($h3);
+  line-height: 1.25em;
+  letter-spacing: 0.025em;
+  font-weight: $h3-weight;
+}
+
+%h4 {
+  font-size: px-to-em($h4);
+  line-height: 1.3em;
+  @include transition(.2);
+  letter-spacing: 0.025em;
+  font-weight: $h4-weight;
+}
+
+%h5 {
+  font-size: px-to-em($h5);
+  line-height: 1.3em;
+  letter-spacing: 0.01em;
+  font-weight: $h5-weight;
+}
+
+%h6 {
+  font-size: px-to-em($h6);
+  line-height: 1.37em;
+  font-weight: $h6-weight;
+}
+
+html {
+  font-size: $base-font-size+px;
+  line-height: $base-line-height+px;
+  font-family: $font-family-base;
+  font-weight: $font-weight-regular;
+  @include text_align_start;
+  -webkit-font-smoothing: antialiased;
+}
+
+html, body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-font-kerning: normal;
+  -moz-font-kerning: normal;
+  font-kerning: normal;
+  -webkit-font-feature-settings: "liga";
+  -moz-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern";
+}
+
+body {
+  direction: $global-direction;
+  color: $body-text-color;
+  background-color: $body-bg-color;
+  line-height: $base-line-height+px;
+  background-repeat: repeat;
+  background-attachment: fixed;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  background-position: 0 0;
+  letter-spacing: 0.01em;
+  word-spacing: 0.01em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-headings;
+  color: $header-font-color;
+  text-rendering: optimizeLegibility;
+  margin-bottom: .5em;
+}
+
+.dima-custom-heading {
+  i {
+    @include margin-end(15px);
+  }
+}
+
+.article {
+  h3, h4, h5, h6 {
+    padding: 1.5em 0 .5em;
+  }
+}
+
+p {
+  font-size: $base-font-size+px;
+  line-height: $base-line-height+px;
+  font-family: $font-family-base;
+  font-weight: $p-weight;
+  color: $body-text-color;
+  letter-spacing: 0.01em;
+  word-spacing: 0.01em;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  hyphens: auto;
+}
+
+h1 {
+  @extend %h1;
+}
+
+h2 {
+  @extend %h2;
+}
+
+h3 {
+  @extend %h3;
+}
+
+h4 {
+  @extend %h4;
+}
+
+h5 {
+  @extend %h5;
+}
+
+h6 {
+  @extend %h6;
+}
+
+caption {
+  font-size: 0.667rem
+}
+
+small {
+  font-size: 0.444rem
+}
+
+a {
+  color: $body-link-color;
+  text-decoration: none;
+  outline: 0;
+  line-height: inherit;
+  max-width: 100%;
+  max-width: none \9
+;
+  &:hover {
+    color: $body-link-hover-color;
+  }
+}
+
+a:hover, a:focus, a:visited {
+  outline: 0;
+}
+
+p a, p a:visited {
+  line-height: inherit;
+}
+
+//Highlighted Colors
+::-webkit-selection {
+  background-color: $theme-color;
+  color: #FFFFFF;
+}
+
+::-moz-selection {
+  background-color: $theme-color;
+  color: #FFFFFF;
+}
+
+::selection {
+  background-color: $theme-color;
+  color: #FFFFFF;
+}
+
+body {
+  @extend %breakword;
+}
+
+abbr[title], acronym {
+  cursor: help;
+  border-bottom: 1px dotted $border-color;
+}
+
+big {
+  font-size: larger;
+}
+
+em, cite {
+  font-style: italic;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+  vertical-align: super;
+  font-size: smaller;
+}
+
+sub, sup {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+.bg-dark {
+  h1, h2, h3, h4, h5, h6 {
+    color: #ffffff !important;
+  }
+}
+
+@include break(sd-min) {
+  h1 {
+    font-size: 36px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+  h4 {
+    font-size: 18px;
+  }
+  h5 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,306 @@
+ul.dima-accordion {
+  margin: 0;
+  list-style: none;
+
+  .dima-accordion-group {
+    border-bottom: none;
+    .dima-accordion-header {
+
+      .dima-accordion-toggle {
+        display: block;
+        padding: 17px 30px;
+        font-family: $font-family-headings;
+        @include font-size(14, 16);
+        font-weight: $font-weight-semibold;
+        color: #fff;
+        background: $theme-color;
+        @include transition(all 0.25s ease-in);
+        @include text-align-start;
+
+        &:before {
+          font-family: "fontawesome";
+          position: relative;
+          display: inline-block;
+          color: #fff;
+          @include transition(all 0.25s ease-in);
+          font-weight: $p-weight;
+        }
+
+        &.collapsed {
+          background-color: $tab-nav-bg;
+          color: $tab-nav-color;
+          &:before {
+            color: $tab-nav-color;
+          }
+        }
+      }
+    }
+
+    .dima-accordion-content {
+      &.collapse {
+        position: relative;
+        height: 0;
+        overflow: hidden;
+        @include transition(all 0.25s ease-in);
+        &.in {
+          height: auto;
+        }
+      }
+
+      .dima-accordion-inner {
+        padding: 18px 30px;
+        border: 1px solid $border-color;
+      }
+    }
+  }
+
+  &.dima-acc-arrow {
+    &.dima-acc-janobi {
+      .dima-accordion-toggle {
+        &:before, &.collapsed:before {
+          @include float-start();
+        }
+      }
+    }
+    .dima-accordion-toggle {
+
+      &:before {
+        @include margin-end(10px);
+        content: "\f054";
+        @include transform(rotate(90deg));
+      }
+
+      &.collapsed {
+        &:before {
+          @if $global-direction == "rtl" {
+            content: "\f053";
+          } @else {
+            content: "\f054";
+          }
+          @include transform(rotate(0deg));
+          @include float-start;
+        }
+      }
+    }
+  }
+
+  &.dima-acc-plus {
+    &.dima-acc-janobi {
+      .dima-accordion-toggle {
+        &:before, &.collapsed:before {
+          @include float-start();
+        }
+      }
+    }
+
+    .dima-accordion-toggle {
+      &:before, &.collapsed:before {
+        @include float-end();
+      }
+      &:before {
+        content: "\f068";
+      }
+      &.collapsed {
+        &:before {
+          content: "\f067";
+        }
+      }
+    }
+  }
+
+  &.dima-acc-sample {
+    .dima-accordion-group {
+      .dima-accordion-header {
+        .dima-accordion-toggle {
+          border: 1px solid $theme-color;
+          &.collapsed {
+            border-color: $border-color;
+          }
+        }
+      }
+      .dima-accordion-content {
+        .dima-accordion-inner {
+          background-color: $tab-nav-bg-active;
+        }
+      }
+    }
+
+    li.dima-accordion-group {
+      &:nth-last-child(n+2) {
+        .dima-accordion-header .dima-accordion-toggle,
+        .dima-accordion-inner {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+  &.dima-acc-separated {
+    .dima-accordion-group {
+      .dima-accordion-header {
+        .dima-accordion-toggle {
+          border: 1px solid $theme-color;
+
+          &.collapsed {
+            border-color: $border-color;
+          }
+        }
+      }
+
+      margin-bottom: 10px;
+      .dima-accordion-content {
+        .dima-accordion-inner {
+          border-bottom: 1px solid $border-color;
+          background: $tab-cnt-bg;
+        }
+      }
+    }
+  }
+
+  &.no-acc-border {
+    .dima-accordion-group .dima-accordion-content {
+      .dima-accordion-inner {
+        padding: 18px 0;
+        border: none;
+        background: transparent;
+      }
+    }
+  }
+
+  &.dima-acc-janobi {
+
+    &.acc-circle {
+      .dima-accordion-toggle {
+        &:before {
+          border-radius: 99em;
+        }
+      }
+    }
+
+    .dima-accordion-header {
+      border: none;
+      height: 42px;
+      .dima-accordion-toggle {
+        &:before {
+          background: $theme-color;
+          @include margin-end(25px);
+          width: 40px;
+          height: 40px;
+          line-height: 40px;
+          border: 1px solid $theme-color;
+          text-align: center;
+          top: -12px;
+        }
+        &.collapsed {
+          background: none;
+          &:before {
+            background: $section-bg-color;
+            border-color: $border-color;
+          }
+        }
+        padding: 0;
+        background: none !important;
+        color: $header-font-color;
+
+      }
+    }
+    .dima-accordion-group {
+      margin-bottom: 30px;
+      .dima-accordion-inner {
+        border: none;
+        padding: 0;
+        @include padding-start(70px);
+      }
+    }
+  }
+
+  &.dima-acc-clear {
+    .dima-accordion-group {
+      border-bottom: 1px solid $border-color !important;
+
+      .dima-accordion-header {
+        .dima-accordion-toggle {
+          &.collapsed {
+            color: $header-font-color;
+            &:before {
+              color: $header-font-color;
+            }
+          }
+          padding: 17px 0;
+          background: none;
+          color: $header-font-color;
+          &:before {
+            color: $theme-color;
+          }
+        }
+      }
+      .dima-accordion-content {
+        .dima-accordion-inner {
+          border: none;
+          padding: 13px 0 25px;
+        }
+      }
+    }
+  }
+}
+
+.dark-bg {
+  ul.dima-accordion {
+    &.dima-acc-clear {
+      .dima-accordion-group {
+        border-bottom-color: rgba(#FFF, 0.4) !important;
+      }
+    }
+
+    &.dima-acc-sample,
+    &.dima-acc-separated {
+      .dima-accordion-group {
+        .dima-accordion-header {
+          .dima-accordion-toggle.collapsed {
+            background: rgba(#fff, 0.1);
+            border-color: rgba(#FFF, 0.4);
+            color: #fff;
+            &.collapsed:before {
+              color: #ffffff;
+            }
+          }
+        }
+      }
+    }
+
+    &.dima-acc-janobi {
+      .dima-accordion-header {
+        .dima-accordion-toggle.collapsed:before {
+          border-color: rgba(#FFF, 0.4);
+          background: rgba(#fff, 0.1);
+        }
+      }
+    }
+
+    &.no-acc-border,
+    &.dima-acc-janobi,
+    &.dima-acc-clear {
+      .dima-accordion-group {
+
+        .dima-accordion-header {
+          .dima-accordion-toggle,
+          .dima-accordion-toggle.collapsed {
+            &.collapsed:before {
+              color: #ffffff;
+            }
+            color: #ffffff;
+          }
+        }
+        .dima-accordion-content {
+          .dima-accordion-inner {
+            color: rgba(#FFF, 0.8);
+            p {
+              color: rgba(#FFF, 0.8);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

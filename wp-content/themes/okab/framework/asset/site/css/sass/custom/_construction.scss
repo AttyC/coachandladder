@@ -1,0 +1,27 @@
+.post-icon .icons-media li a {
+  border-color: $header-font-color;
+  color: $header-font-color;
+}
+
+body, p {
+  line-height: 30px;
+}
+
+.work-item:hover .post-icon .icons-media a:hover,
+.dima-team-member:hover .post-icon .icons-media a:hover,
+.post-img:hover .post-icon .icons-media a:hover,
+.dima-product:hover .post-icon .icons-media a:hover {
+  background: $header-font-color;
+  border-color: $header-font-color;
+  color: $theme-color;
+}
+
+[type="submit"],
+.dima-button {
+  border-radius: 99em;
+}
+
+[type="submit"],
+.fill {
+  color: $header-font-color;
+}

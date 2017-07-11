@@ -1,0 +1,67 @@
+////******************************************************************************************/
+// sidebar*/
+////******************************************************************************************/
+
+.dima-sidebar {
+  width: 27%;
+}
+
+.wpb_widgetised_column,
+.top-footer,
+.dima-sidebar {
+  .widget {
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+.wpb_widgetised_column,
+.dima-sidebar {
+  .widget {
+    position: relative;
+    background: $widget-bg-color;
+    border: 1px solid $border-color;
+    padding: 30px;
+    margin-bottom: 30px;
+
+    .inline {
+      > li {
+        @include margin-end(12px);
+        margin-bottom: 12px;
+        &:last-child {
+          @include margin-end(0px);
+        }
+      }
+    }
+    .button {
+      display: block;
+      width: 100%;
+      @include padding-end(0);
+      @include padding-start(0);
+      -webkit-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+    .widget-title {
+      margin-bottom: 30px;
+    }
+
+    &.dima-tabs {
+      background: transparent;
+      border: none;
+      padding: 0;
+
+      .dima-tab-content .dima-tab_content {
+        padding: 30px 30px;
+      }
+    }
+
+    .dima-testimonial.quote-style blockquote p {
+      color: $body-text-color;
+
+      @include font-size(18, 30);
+
+      font-weight: $p-weight;
+    }
+  }
+}

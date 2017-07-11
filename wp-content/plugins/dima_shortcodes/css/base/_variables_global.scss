@@ -1,0 +1,14 @@
+$columns: 12 !default;
+$gutter: 30px !default;
+
+// Container width *
+$ExtraLargeDevices: 1200px !default;
+$LargeDevices: 1140px !default;
+$MediumDevices: 970px !default;
+$SmallDevices: 722px !default;
+//  Breakpoint *
+$screen-xld-min: 1600px !default;
+$screen-ld-min: 1140px !default;
+$screen-sd-max: 989px !default;
+$screen-sd-min: 768px !default;
+$screen-xsd-min: 480px !default;

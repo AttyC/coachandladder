@@ -1,0 +1,151 @@
+// HEADER
+
+header {
+  display: block;
+  width: 100%;
+  position: relative;
+}
+
+.dima-main {
+  position: relative;
+  float: none;
+  display: block;
+  width: auto;
+  .dima-page-wrapper {
+    margin-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+//Revolution Slaid
+article {
+  &.revolution {
+    position: relative;
+  }
+}
+
+//Container Title
+
+.title_container {
+  background: $title_con_bg;
+  &.start-style, &.end-style {
+    .topaz-line {
+      margin-bottom: 0;
+    }
+  }
+  .topaz-line:before, .topaz-line:after {
+    border-color: rgba(#ffffff, 0.4);
+  }
+  .dima-subtitle {
+    color: $title_con_color;
+    display: block;
+  }
+  .dima-section-cover {
+    opacity: 0.8;
+  }
+  &.start-style, &.center-style {
+    .page-section-content {
+      padding: 70px 0;
+    }
+    &.dima-floating-breadcrumbs {
+      .page-section-content {
+        padding-top: 220px;
+      }
+    }
+    &.dima-transparent-breadcrumbs {
+      .page-section-content {
+        padding-top: 285px;
+      }
+    }
+    h1 {
+      @extend h2;
+      margin-bottom: 0;
+      color: $title_con_color;
+      &.text-start {
+        width: 70%;
+      }
+    }
+    .dima-breadcrumbs {
+      z-index: 10;
+      @include font-size(14, 20);
+      color: $title_con_color;
+      &.breadcrumbs-end {
+        position: absolute;
+        @include end(0);
+        top: 50%;
+        margin-top: -7px;
+        width: 30%;
+      }
+      &.breadcrumbs-start {
+        position: absolute;
+        @include start(0);
+        top: 50%;
+        margin-top: -7px;
+      }
+      &.breadcrumbs-center {
+        text-align: center;
+      }
+      a {
+        color: $title_con_color;
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+
+.sep {
+  padding: 0 5px;
+}
+
+.fixed_header {
+  position: fixed;
+  z-index: 100;
+}
+
+.dima-transparent-navigation-active {
+  &.admin-bar {
+    .dima-navbar-wrap.desk-nav {
+      .dima-navbar {
+        top: 32px;
+        &.dima-navbar-transparent {
+          top: 0;
+        }
+      }
+    }
+  }
+  .dima-navbar-wrap.desk-nav {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 1030;
+  }
+}
+
+@include break(sd-min) {
+
+  .title_container.start-style .page-section-content,
+  .title_container.center-style .page-section-content {
+    padding: 50px 0;
+  }
+  //Title Container
+  .title_container {
+    h1 {
+      text-align: center;
+      width: 100% !important;
+    }
+    &.start-style {
+      .dima-breadcrumbs {
+        position: relative !important;
+        margin-top: 20px !important;
+        text-align: center;
+        width: 100% !important;
+      }
+      .page-section-content {
+        padding: 30px 0 30px 0 !important;
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+// Pagination*/
+.pagination,
+.dima-pagination {
+  position: relative;
+  margin-top: 30px;
+  ul {
+    display: inline-block;
+    margin: 0;
+
+    li {
+      display: inline;
+
+      .pages {
+        display: none;
+      }
+
+      .expand {
+        margin: 0 5px;
+        position: relative;
+        letter-spacing: 5px;
+      }
+
+      > span, a {
+        @include font-size(13, 30);
+
+        margin: 0 2px;
+        padding: 0 11px;
+
+        @include float_start;
+
+        height: 32px;
+        text-align: center;
+        font-weight: $p-weight;
+        text-decoration: none;
+        color: $body-text-color;
+        background-color: $section-bg-color;
+
+        @include transition(all 0.2s ease-in);
+
+        border: 1px solid $border-color;
+
+        &:hover {
+          background: $theme-color;
+          border: 1px solid $theme-color;
+          color: #FFFFFF;
+        }
+      }
+
+      .dima-next {
+        font-size: 0;
+
+        &:before {
+          font-size: 16px;
+          text-indent: 0;
+          font-family: $FontAwesome;
+
+          @if $global-direction == "ltr" {
+            content: '\f105';
+          } @else {
+            content: '\f104';
+          }
+        }
+      }
+
+      .dima-previous {
+        font-size: 0;
+
+        &:before {
+          font-size: 16px;
+          text-indent: 0;
+          font-family: $FontAwesome;
+
+          @if $global-direction == "ltr" {
+            content: '\f104';
+          } @else {
+            content: '\f105';
+          }
+        }
+      }
+    }
+  }
+  .current,
+  .current-page {
+    display: inline-block;
+
+    @include text_align_start;
+
+    margin: 0 2px;
+    font-weight: bold;
+    color: white;
+    background-color: $theme-color;
+    border: 1px solid $theme-color;
+  }
+}
+
+.page-links {
+  margin-top: 30px;
+  a {
+    .page-number {
+      color: $body-text-color;
+      background-color: $section-bg-color;
+      border: 1px solid $border-color;
+    }
+  }
+  > .page-number {
+    background: $theme-color;
+    border: 1px solid $theme-color;
+    color: #FFFFFF;
+  }
+  .page-number {
+    display: inline-block;
+    @include font-size(13, 30);
+    margin: 0 2px;
+    padding: 0 11px;
+    height: 32px;
+    text-align: center;
+    font-weight: $p-weight;
+    text-decoration: none;
+
+    @include transition(all 0.2s ease-in);
+
+    &:hover {
+      background: $theme-color;
+      border: 1px solid $theme-color;
+      color: #FFFFFF;
+    }
+
+  }
+}
+

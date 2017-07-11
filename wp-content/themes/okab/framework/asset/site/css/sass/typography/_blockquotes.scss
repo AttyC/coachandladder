@@ -1,0 +1,65 @@
+$quote_size: $base-font-size + 4;
+blockquote {
+  position: relative;
+  font-style: italic;
+  margin: 1.3em 0;
+  line-height: 20px;
+  color: $body-text-color;
+  padding: px-to-em(25);
+  @include padding-end(0);
+  @include border-start(5px solid $theme-color);
+
+  p {
+    font-size: px-to-em($quote_size);
+    line-height: px-to-em(25, $quote_size);
+    position: relative;
+    overflow: hidden;
+  }
+
+  cite {
+    display: block;
+    font-size: px-to-em($base-font-size);
+    line-height: px-to-em($base-font-size);
+    letter-spacing: 0.05em;
+    color: $body-text-color;
+    margin-top: px-to-em(35);
+    a {
+      color: $body-text-color;
+      &:visited {
+        color: $body-text-color;
+      }
+    }
+    &:before {
+      content: "-";
+    }
+    &:after {
+      content: "-";
+    }
+  }
+
+  &.blog-style {
+    background-color: $quote-bg;
+    @include border-start(none);
+    position: relative;
+    display: block;
+    padding: px-to-rem(45) px-to-rem(45);
+
+    p, cite {
+      color: $quote-text-color !important;
+      z-index: 5;
+      a {
+        color: $quote-text-color;
+      }
+    }
+    cite {
+      display: inline-block;
+    }
+  }
+
+}
+
+article {
+  blockquote {
+    margin: 0;
+  }
+}

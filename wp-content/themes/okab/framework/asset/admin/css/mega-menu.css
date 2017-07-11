@@ -1,0 +1,46 @@
+.dima-megamenu-columns,
+.dima-megamenu-title,
+.dima-open-media button,
+.dima-megamenu-upload-background,
+.target-menu-item-megamenu-background,
+.dima-megamenu-background,
+.dima-remove-megamenu-background {
+    display: none !important;
+}
+
+.dima-megamenu-options {
+    display: none;
+}
+
+.dima-megamenu .dima-remove-megamenu-background,
+.dima-megamenu .dima-megamenu-columns,
+.dima-megamenu .dima-megamenu-title,
+.dima-megamenu .target-menu-item-megamenu-background,
+.dima-megamenu .dima-megamenu-background,
+.dima-megamenu .dima-remove-megamenu-background {
+    display: block !important;
+}
+
+.dima-megamenu .dima-megamenu-upload-background,
+.dima-megamenu .dima-open-media button {
+    display: inline-block !important;
+}
+
+.menu-item-depth-0 > .menu-item-settings .dima-megamenu-options {
+    display: block;
+}
+
+.menu-item-settings {
+    overflow: hidden;
+}
+
+.dima-megamenu-ismega,
+.dima-megamenu-upload-background {
+    margin-top: 0.6em !important;
+}
+
+.dima-megamenu-background {
+    margin-top: 0.6em !important;
+    max-width: 100%;
+    clear: both;
+}

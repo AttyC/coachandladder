@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/*------------------------------------------------------------------
+[Woocommerce Business Stylesheet]
+
+Project:	 PixelDIma OKAB
+Version:	 1.0
+Primary use: For Business Demo
+Style:       Light
+Direction :  LTR
+-------------------------------------------------------------------*/
+@import "../../extensions/modular-scale";
+@import "../../base/demo/cosmetic/all_rtl";
+@import "../../base/all";
+
+@import "../../shop/all";
+
+.products-grids .dima-product:hover .link_overlay,
+.products-list .dima-product:hover .link_overlay {
+  background: rgba($theme-color, 0.4);
+}

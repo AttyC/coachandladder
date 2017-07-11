@@ -1,0 +1,355 @@
+//Topaz Hover - Topaz border*/
+$over-icon-color: #FFF;
+
+.topaz-border,
+.topaz-hover {
+  &.topaz-dashed {
+    &:before {
+      border-top: 1px dashed #fff;
+      border-bottom: 1px dashed #fff;
+    }
+
+    &:after {
+      @include border-start(1px dashed #fff);
+
+      @include border-end(1px dashed #fff);
+    }
+  }
+  width: 100%;
+  //height: 100%;*/
+  top: 0;
+  z-index: 5;
+
+  @include start(0);
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 5px;
+
+    @include end(5px);
+
+    bottom: 5px;
+
+    @include start(5px);
+
+    z-index: 1;
+  }
+
+  &:before {
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+  }
+
+  &:after {
+    @include border-start(1px solid #fff);
+
+    @include border-end(1px solid #fff);
+  }
+}
+
+.topaz-hover {
+  &:before, &:after {
+    @include opacity(0);
+
+    -webkit-transition: opacity 0.45s, -webkit-transform 0.45s;
+    transition: opacity 0.45s, transform 0.45s;
+  }
+
+  &:before {
+    -webkit-transform: scale(0, 1);
+    transform: scale(0, 1);
+  }
+
+  &:after {
+    -webkit-transform: scale(1, 0);
+    transform: scale(1, 0);
+  }
+
+  &:hover {
+    &:before, &:after {
+      @include opacity(1);
+
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+  }
+}
+
+//Topaz Hover! - Topaz border!*/
+//================================================*/
+
+.apply-gray {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  filter: grayscale(100%);
+
+  @include transition(all 0.2s ease-in);
+
+  -webkit-backface-visibility: hidden;
+}
+
+.apply-gray {
+  &:hover {
+    @include opacity(1);
+
+    -webkit-filter: grayscale(0%);
+    -moz-filter: grayscale(0%);
+    filter: grayscale(0%);
+  }
+}
+
+///
+// hover mine class
+//
+.post-icon, .link_overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+
+  @include start(0);
+
+  @include end(0);
+}
+
+.link_overlay {
+  background: rgba(0, 0, 0, 0);
+
+  @include box-sizing(order-box);
+
+  @include transition(all 0.2s ease-in);
+
+  z-index: 50;
+
+  @if $border-radius != 0 {
+    @include border-radius($border-radius);
+  }
+}
+
+///
+// Apply Hover link_overlay
+//
+
+.post-icon {
+  .icons-media {
+    @include opacity(0);
+  }
+
+  .icons-media {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    //left: 50%; //must be left
+    @include start(50%);
+    top: 50%;
+    margin: 40px 0 0 0;
+    @if ($global-direction == "rtl") {
+      transform: translate(50%, -50%);
+    } @else {
+      transform: translate(-50%, -50%);
+    }
+
+    @include transition(all 0.2s ease-in);
+
+    z-index: 99;
+
+    &.media-button {
+      li {
+        a {
+          width: 160px;
+          font-size: 1rem;
+          font-family: $font-family-headings;
+        }
+      }
+    }
+    li {
+      position: relative;
+      display: inline-table;
+
+      @include margin-end(30px);
+
+      margin-bottom: 30px;
+      z-index: 55;
+
+      @include float-start;
+
+      &:nth-child(2n+3) {
+        @include clear_start;
+      }
+
+      &:nth-child(2n) {
+        @include margin-end(0px);
+      }
+
+      &:last-child {
+        @include margin-end(0px !important);
+      }
+
+      a {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        border: 1px solid $over-icon-color;
+        font-family: $FontAwesome;
+
+        @include font-size(22, 50);
+
+        color: $over-icon-color;
+
+        @include transition(all 0.2s ease-in);
+
+        &:first-child {
+          @include margin-start(0px);
+        }
+
+        @if $border-radius != 0 {
+          @include border-radius($border-radius);
+        }
+      }
+    }
+  }
+}
+
+.work-item,
+.dima-team-member,
+.post-img,
+.dima-product {
+
+  &:hover {
+    .post-icon {
+      .icons-media {
+        @include opacity(1);
+
+        a {
+          @include transition(all 0.2s ease-in);
+
+          &:hover {
+            border-color: $over-icon-color;
+            background: $over-icon-color;
+            color: $theme-color;
+          }
+        }
+      }
+    }
+
+    .link_overlay {
+      background: $theme-color;
+
+      @include opacity(1);
+
+      .icons-media {
+        margin-top: 15px;
+      }
+
+      .work-info {
+        opacity: 1;
+        margin-top: -25px;
+      }
+
+      .topaz-hover {
+        &:before, &:after {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+.overlay {
+  position: relative;
+  display: block;
+
+  &.circle {
+    &:before {
+      @include border-radius(100%);
+    }
+  }
+
+  &.rounded {
+    &:before {
+      @include border-radius(6px);
+    }
+  }
+
+  &:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+
+    @include start(0);
+
+    @include opacity(0);
+
+    @include transition(all 0.3s ease-in);
+
+    background-color: $theme-color;
+    cursor: pointer;
+    z-index: 99;
+  }
+
+  &:hover {
+    &:before {
+      @include opacity(0.5);
+    }
+  }
+}
+
+.effect-julia, .effect-roxy {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.effect-roxy {
+
+  img {
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: scale(1.15);
+    transform: scale(1.15);
+  }
+
+  &:hover {
+
+    img {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+    }
+
+  }
+}
+
+.effect-julia img {
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, transform 1s;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.effect-julia:hover img {
+  -webkit-transform: scale3d(1.1, 1.1, 1);
+  transform: scale3d(1.1, 1.1, 1);
+}
+
+.gray-opacity {
+
+  img {
+    opacity: .6;
+
+    @include transition(all 0.2s ease-in);
+
+    -webkit-backface-visibility: hidden;
+    width: auto;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+}

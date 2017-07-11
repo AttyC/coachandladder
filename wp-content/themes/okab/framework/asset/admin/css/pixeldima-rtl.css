@@ -1,0 +1,568 @@
+.pixeldima-header {
+  margin-bottom: 50px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 50px;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.85);
+  overflow: hidden; }
+
+.rtl h1, .rtl h2, .rtl h3, .rtl h4, .rtl h5, .rtl h6 {
+  font-family: Tahoma, Arial, sans-serif; }
+
+.pixeldima-header-text {
+  float: right; }
+
+.pixeldima-logo {
+  position: relative;
+  float: left;
+  margin: 12px 0 0;
+  width: 165px;
+  -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
+
+.pixeldima-logo .text {
+  padding: 10px 0;
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: #3375ff; }
+
+.pixeldima-logo .logo {
+  background: #fff url(../../../images/logo.png) no-repeat center;
+  border: none;
+  padding-top: 80px;
+  height: 30px; }
+
+#adminmenu li.menu-top.toplevel_page_pixel-dima-dashboard
+> a .wp-menu-image:before {
+  content: "";
+  background: url("../../../images/pixeldima.png") no-repeat center; }
+
+.pixeldima-header h2 {
+  font-size: 35px;
+  line-height: 45px;
+  font-weight: 600;
+  text-align: center;
+  color: #3375ff; }
+
+.title-warp {
+  border: 1px solid #e5e5e5;
+  border-bottom: 0;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 10px;
+  overflow: hidden;
+  text-align: center; }
+  .title-warp h4 {
+    color: #1565c0;
+    margin: 0; }
+
+li.pixeldima-extension {
+  width: calc(33.3333% - 20px);
+  margin-bottom: 30px;
+  margin-left: 30px;
+  float: right;
+  min-height: 410px; }
+  li.pixeldima-extension:nth-child(3n) {
+    margin-left: 0; }
+
+.pixeldima-extensions-list {
+  overflow: hidden; }
+
+.pixeldima-extension {
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px; }
+
+.pixeldima-extension .img {
+  width: 60px;
+  margin: 0 0 1em; }
+
+.pixeldima-extension .pixeldima-extension-content {
+  position: relative;
+  padding: 20px;
+  text-align: center;
+  color: #74a7d2; }
+
+.pixeldima-extension .pixeldima-extension-content .btn {
+  margin-top: 30px; }
+
+.pixeldima-extension .pixeldima-extension-content .title {
+  color: #3375ff;
+  font-size: 14px;
+  font-weight: 600; }
+  .pixeldima-extension .pixeldima-extension-content .title .plugin-author {
+    color: #74a7d2;
+    font-size: 12px;
+    font-weight: 400;
+    display: block;
+    margin-top: 5px; }
+
+.pixeldima-important-notice {
+  position: relative;
+  overflow: hidden;
+  padding: 15px 30px;
+  border: 1px solid #e5e5e5;
+  background-color: #fff;
+  color: #59A6D4;
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.pixeldima-notice-side {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 32px 20px;
+  height: 100%;
+  background: #FFFFFF;
+  color: #3375ff; }
+
+.pixeldima-notice-side span {
+  font-size: 25px;
+  line-height: 15px; }
+
+.pixeldima-important-notice p {
+  font-size: 14px;
+  padding-right: 32px; }
+
+.pixeldima-wrap {
+  margin-top: 10px;
+  margin-bottom: 0;
+  margin-left: 20px;
+  margin-right: 2px; }
+
+.pixeldima-extension-content .info .status {
+  position: absolute;
+  top: 0;
+  right: 0px;
+  font-size: 16px;
+  padding: 1px 3px;
+  color: #d8d8d8;
+  font-weight: 600; }
+
+.pixeldima-extension-content .status.active {
+  color: #4bb749;
+  font-size: 14px; }
+
+select:focus {
+  outline: none; }
+
+.about-wrap .nav-tab {
+  font-size: 16px; }
+
+.pixeldima-extension-content .status.active:before {
+  font-family: "dashicons";
+  content: "\f147";
+  padding-left: 3px;
+  font-size: 20px; }
+
+.pixeldima-home .pixeldima-header-text {
+  width: 80%; }
+.pixeldima-home p {
+  font-size: 15px;
+  line-height: 25px; }
+
+.pixeldima-customizer-backup h3 {
+  margin: 0; }
+.pixeldima-customizer-backup .submit {
+  padding-bottom: 0; }
+
+.pixeldima-customizer-backup .title {
+  color: #FFF;
+  background: #3375ff;
+  margin: 0;
+  padding: 15px; }
+
+.pixeldima-customizer-backup .inside {
+  background: #FFF;
+  padding: 20px; }
+
+.pixeldima-customizer-backup p {
+  color: #57A5D3; }
+
+.pixeldima-admin-popup {
+  position: fixed;
+  display: table;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(35, 40, 45, 0.67);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0.3s;
+  transition: opacity 0.3s 0s, visibility 0s 0.3s; }
+
+.pixeldima-admin-popup.is-visible {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 0.3s 0s, visibility 0s 0s;
+  -moz-transition: opacity 0.3s 0s, visibility 0s 0s;
+  transition: opacity 0.3s 0s, visibility 0s 0s; }
+
+.pixeldima-admin-popup-container {
+  position: relative;
+  width: 90%;
+  max-width: 500px;
+  margin: 4em auto;
+  background: #FFF;
+  border-radius: .25em .25em .4em .4em;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s; }
+
+.pixeldima-admin-popup-container p {
+  padding: 3em 1em 2em;
+  font-size: 16px; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-buttons:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-buttons li {
+  float: right;
+  width: 50%;
+  margin-bottom: 0; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-buttons a {
+  display: block;
+  height: 60px;
+  line-height: 60px;
+  text-transform: uppercase;
+  color: #FFF;
+  -webkit-transition: background-color 0.2s;
+  -moz-transition: background-color 0.2s;
+  transition: background-color 0.2s;
+  text-decoration: none; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-buttons li:first-child a {
+  background: #1565c0;
+  border-radius: 0 0 0 .25em;
+  border: 1px solid #1565c0; }
+
+.no-touch .pixeldima-admin-popup-container .pixeldima-admin-buttons li:first-child a:hover {
+  background-color: #fc8982; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-buttons li:last-child a {
+  background: #F0F7FB;
+  border-radius: 0 0 .25em 0;
+  color: #1565c0;
+  border: 1px solid #E1EFF7; }
+
+.no-touch .pixeldima-admin-popup-container .pixeldima-admin-buttons li:last-child a:hover {
+  background-color: #c5cpixeldima-admin-; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-popup-close {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  width: 30px;
+  height: 30px; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-popup-close::before, .pixeldima-admin-popup-container .pixeldima-admin-popup-close::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  width: 14px;
+  height: 3px;
+  background-color: #32373C; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-popup-close::before {
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
+  transform: rotate(45deg);
+  right: 8px; }
+
+.pixeldima-admin-popup-container .pixeldima-admin-popup-close::after {
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -ms-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  left: 8px; }
+
+.is-visible .pixeldima-admin-popup-container {
+  -webkit-transform: translateY(0);
+  -moz-transform: translateY(0);
+  -ms-transform: translateY(0);
+  -o-transform: translateY(0);
+  transform: translateY(0); }
+
+.pixeldima-admin-popup-inner {
+  display: table-cell;
+  width: 100%;
+  height: 100%; }
+
+[class^="pixeldima-"] .button {
+  border-radius: .25em;
+  border: none;
+  box-shadow: none;
+  padding: 8px;
+  height: auto;
+  background: #3375ff;
+  color: #FFFFFF; }
+
+[class^="pixeldima-"] .button:hover {
+  background: #1565c0;
+  color: #FFFFFF; }
+
+[class^="pixeldima-"] .button.button-primary[disabled] {
+  background: #0277bd !important;
+  color: #68a0cf !important; }
+
+[class^="pixeldima-"] .button.button-primary {
+  background: #0277BD;
+  text-shadow: none; }
+
+[class^="pixeldima-"] .button.button-primary:hover {
+  background: #1565c0;
+  box-shadow: none; }
+
+.feature-section .three {
+  width: 30%;
+  float: right;
+  padding-left: 3%; }
+
+.dima-customize-toggel {
+  left: 5px;
+  right: auto !important; }
+
+.feature-section .three:last-child {
+  padding-left: 0; }
+
+.tab_sortable li {
+  list-style: none;
+  background: #fafafa;
+  padding: 10px;
+  border: 1px solid #eee;
+  cursor: move; }
+
+.isactive_theme .status.active {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 14px;
+  letter-spacing: 3px;
+  background: #4bb749;
+  line-height: 40px;
+  color: #fff;
+  width: 100%;
+  text-align: center; }
+
+.pixeldima-demos-list .pixeldima-demo {
+  position: relative;
+  width: calc(33.3333% - 20px);
+  margin: 0 0 30px 30px;
+  float: right; }
+  .pixeldima-demos-list .pixeldima-demo:nth-child(3n) {
+    margin-left: 0; }
+  .pixeldima-demos-list .pixeldima-demo .pixeldima-demo-screenshot {
+    border: 1px solid #e5e5e5;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-bottom: 10px; }
+    .pixeldima-demos-list .pixeldima-demo .pixeldima-demo-screenshot img {
+      width: 100%;
+      height: auto;
+      display: block; }
+  .pixeldima-demos-list .pixeldima-demo .info {
+    position: relative;
+    height: 50px;
+    border: 1px solid #e5e5e5;
+    background-color: #fff;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow: hidden;
+    color: #1565c0; }
+    .pixeldima-demos-list .pixeldima-demo .info .title {
+      margin: 15px 0;
+      left: 10px;
+      position: absolute;
+      top: 0; }
+    .pixeldima-demos-list .pixeldima-demo .info .btn {
+      display: inline-block; }
+      .pixeldima-demos-list .pixeldima-demo .info .btn .title {
+        color: #1565c0; }
+      .pixeldima-demos-list .pixeldima-demo .info .btn .button {
+        padding: 2px 8px; }
+  .pixeldima-demos-list .pixeldima-demo label {
+    display: block;
+    margin-top: 6px;
+    margin-left: 10px; }
+
+.pixeldima-demos-list .theme-actions {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  height: 40px; }
+  .pixeldima-demos-list .theme-actions .demo-preview {
+    margin-right: 5px; }
+
+.dima-main-progress {
+  position: fixed;
+  display: table;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(35, 40, 45, 0.67);
+  z-index: 999999999; }
+
+.dima-progress-warp {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  padding: 25px;
+  text-align: center;
+  vertical-align: middle; }
+
+.dima-progress-content {
+  position: relative;
+  width: 100%;
+  margin: 4em auto;
+  max-width: 500px;
+  padding: 30px 0;
+  background: #FFF;
+  border-radius: .25em .25em .4em .4em;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  -webkit-transform: translateY(-40px);
+  -moz-transform: translateY(-40px);
+  -ms-transform: translateY(-40px);
+  -o-transform: translateY(-40px);
+  transform: translateY(-40px);
+  -webkit-backface-visibility: hidden;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  opacity: 1; }
+
+.dima-progress-title {
+  overflow: hidden;
+  width: 100%;
+  margin: 0 0 30px;
+  padding: 0;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: nowrap;
+  color: #3386f2; }
+
+.dima-progress-bar-outer {
+  position: relative;
+  overflow: hidden;
+  height: 4px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 400px;
+  background-color: #add0f3; }
+
+.dima-progress-bar-inner {
+  background-color: #3386f2; }
+  .dima-progress-bar-inner:before {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite;
+    animation: indeterminate 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite; }
+  .dima-progress-bar-inner:after {
+    content: '';
+    position: absolute;
+    background-color: inherit;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    will-change: left, right;
+    -webkit-animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    animation: indeterminate-short 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite;
+    -webkit-animation-delay: 1.15s;
+    animation-delay: 1.15s; }
+
+.done .dima-progress-content {
+  opacity: 0;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5); }
+
+@-webkit-keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%; }
+  60% {
+    left: 100%;
+    right: -90%; }
+  100% {
+    left: 100%;
+    right: -90%; } }
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+    right: 100%; }
+  60% {
+    left: 100%;
+    right: -90%; }
+  100% {
+    left: 100%;
+    right: -90%; } }
+table.dima-status-table {
+  margin-bottom: 1em; }
+  table.dima-status-table th {
+    font-weight: 700;
+    padding: 9px; }
+  table.dima-status-table td {
+    padding: 9px;
+    font-size: 14px; }
+    table.dima-status-table td:first-child {
+      width: 33%; }
+  table.dima-status-table tr:nth-child(2n) td,
+  table.dima-status-table tr:nth-child(2n) th {
+    background: #fcfcfc; }
+  table.dima-status-table .dima-system-status-help {
+    width: 20px; }
+  table.dima-status-table .dima-system-status-green {
+    color: #58AD58; }
+  table.dima-status-table .dima-system-status-yellow {
+    color: #F2E132; }
+  table.dima-status-table .dima-system-status-red {
+    color: #f2483a; }
+  table.dima-status-table .dima-system-status-info {
+    color: #C3C3C3; }
+
+/*# sourceMappingURL=pixeldima-rtl.css.map */

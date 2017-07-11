@@ -1,0 +1,102 @@
+// Page Section
+
+.section {
+  position: relative;
+  z-index: 10;
+}
+
+.background-image-hide {
+  width: 100%;
+  position: absolute !important;
+  height: 100%;
+  left: 0;
+  z-index: 0 !important;
+  top: 0;
+  margin: auto;
+  background-position: center center;
+}
+
+.background-cover {
+  background-size: cover !important;
+}
+
+.background-image-holder {
+  position: absolute;
+  top: 0;
+  @include start(0);
+  width: 100%;
+  height: 100%;
+  background-size: cover !important;
+  z-index: -1;
+  background-position: 50% 50%;
+}
+
+.page-section-content {
+  position: relative;
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+  padding: $section-padding 0;
+  background-attachment: fixed;
+
+  @extend %clearfix;
+
+  &.no-padding-section {
+    padding: 0;
+  }
+  .page-section-content {
+    padding: 0;
+  }
+}
+
+.page-section {
+  z-index: 5;
+  position: relative;
+}
+
+.headline-wrapper {
+  padding: 4em 0;
+  background-color: #f39c12;
+}
+
+.fixed-parallax {
+  overflow: visible;
+
+  &.background-image-hide {
+    background-attachment: fixed !important;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+  }
+  &.dima-pattern-image {
+    background-repeat: repeat;
+    background-size: initial;
+  }
+}
+
+.dima-section-cover {
+  position: absolute;
+  background-color: rgba(37, 37, 37, 0.6);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 3;
+}
+
+@include break(sd-min-sd-max) {
+  .page-section-content {
+    padding: 5.25em 0; //!important
+  }
+
+}
+
+@include break(sd-min) {
+
+  .page-section-content {
+    padding: $section-padding-mini 0;
+  }
+
+}

@@ -1,0 +1,438 @@
+//Header
+.icon-box-header {
+  color: $header-font-color;
+  .box-square, .box-circle {
+    text-align: center;
+    background: $content-bg-color;
+    @include box-shadow(0 0 0 1px $border-color);
+    .topaz-border, .topaz-hover {
+      &:before, &:after {
+        top: 5px;
+        @include end(5px);
+        bottom: 5px;
+        @include start(5px);
+      }
+    }
+  }
+  &.text-center {
+    .icon-box-header i {
+      margin: 0 auto;
+      margin-bottom: 35px;
+    }
+  }
+  .box-circle {
+    @include border-radius(50%);
+    .topaz-hover:after, .topaz-hover:before {
+      border-radius: 50%;
+    }
+  }
+  &:hover {
+    i.box-square, i.box-circle {
+      &.icon-box-hover {
+        background: $theme-color !important;
+        color: #FFF !important;
+        @include box-shadow(0 0 0 1px $widget-border-color);
+        .topaz-hover:before, .topaz-hover:after {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}
+
+.dima-iconbox {
+  .features-title{
+    @include transition(color 0.2s ease-in);
+  }
+  &:hover {
+    i.box-square, i.box-circle {
+      &.icon-box-hover {
+        background: $theme-color !important;
+        color: #FFF !important;
+        @include box-shadow(0 0 0 1px $widget-border-color);
+        .topaz-hover:before, .topaz-hover:after {
+          opacity: 1;
+          -webkit-transform: scale(1);
+          transform: scale(1);
+        }
+      }
+    }
+
+    .icon-box-header i {
+      &.icon-box-hover {
+        color: $theme-color;
+        &.box-circle, &.box-square {
+          color: #ffffff !important;
+        }
+      }
+    }
+    .features-title:not(.no-title-hover) {
+      color: $theme-color;
+    }
+  }
+  .dima-maps {
+    margin-bottom: 30px;
+  }
+
+}
+
+//Features BOX*/
+
+.features-box {
+  text-align: center;
+  padding: 50px 30px;
+  @include box-shadow(0 0 0 1px $border-color);
+  @include box-sizing(order-box);
+  @include transition(all 0.2s ease-in);
+  position: relative;
+  &.no-box {
+    @include box-shadow(none);
+    padding: 0;
+    .icon-box-header {
+      position: relative;
+      margin-bottom: 35px;
+      i {
+        position: relative;
+        @include transition(all 0.2s ease-in);
+      }
+      @include headings {
+        margin-bottom: 0;
+      }
+    }
+    //hna
+    .features-content {
+      p {
+        padding: 0;
+      }
+    }
+  }
+  .icon-box-header {
+    i {
+      margin: 0 auto;
+      margin-bottom: 35px;
+      display: block;
+      @include transition(all 0.2s ease-in);
+    }
+  }
+  .features-content {
+    color: $body-text-color;
+    .features-title {
+      margin-bottom: 13px;
+    }
+    p {
+      padding: 0 40px;
+      @include transition(all 0.2s ease-in);
+      margin-bottom: 0;
+    }
+  }
+  &.background-hover {
+    &:hover {
+      @include box-shadow(none);
+      background: $theme-color !important;
+      @include box-shadow(0 0 0 1px $theme-color);
+
+      p, .features-content, .icon-box-header i, .features-title {
+        color: #FFF !important;
+      }
+    }
+  }
+}
+
+.features-start, .features-end {
+  position: relative;
+  .icon-box-header {
+    width: auto;
+  }
+
+  &.no-box {
+    padding: 0;
+    .icon-box-header {
+      i {
+        position: relative;
+        top: 0;
+        z-index: 10;
+      }
+    }
+    &:hover {
+      .features-title {
+        color: $theme-color !important;
+        &.no-title-hover {
+          color: $header-font-color !important;
+        }
+      }
+    }
+  }
+  padding: 30px;
+  .icon-box-header {
+    i {
+      color: $header-font-color;
+      margin-bottom: 35px;
+      display: block;
+      @include transition(all 0.2s ease-in);
+    }
+  }
+  &.topaz-border, &.topaz-hover {
+    &:before, &:after {
+      top: 5px;
+      @include end(5px);
+      bottom: 5px;
+      @include start(5px);
+    }
+  }
+}
+
+.features-end {
+  &.no-box {
+    .icon-box-header {
+      i {
+        @include end(0px);
+      }
+    }
+  }
+  .icon-box-header {
+    @include margin-start(30px);
+    @include float-end;
+    i {
+      position: relative;
+    }
+  }
+  .features-content {
+    overflow: hidden;
+    .features-title {
+      @include text-align-end;
+    }
+    p {
+      @include text-align-end;
+      padding: 0;
+    }
+  }
+  &.box-square, &.box-circle {
+    &:hover {
+      i {
+        color: #FFF;
+        background: $theme-color;
+      }
+    }
+  }
+}
+
+.features-start {
+  &.no-box {
+    i {
+      @include start(0px);
+    }
+  }
+  .icon-box-header {
+    @include margin-end(30px);
+    @include float-start;
+    i {
+      position: relative;
+    }
+  }
+  .features-content {
+    overflow: hidden;
+    .features-title {
+      @include text-align-start;
+    }
+    p {
+      @include text-align-start;
+      padding: 0;
+    }
+  }
+  &.box-square, &.box-circle {
+    &:hover {
+      i {
+        color: #FFF;
+        background: $theme-color;
+      }
+    }
+  }
+}
+
+// CountUp
+.countUp {
+  border: 1px solid $border-color;
+  @include text_align_start;
+  padding: 30px;
+  .icon-count {
+    @include font-size(54, 54);
+    color: $theme-color;
+    @include margin-end(20px);
+  }
+  .number {
+    position: relative;
+    font-weight: $h1_weight;
+    display: inline-block;
+    color: $body-text-color;
+    @include font-size(36, 30);
+    @include start(0px);
+  }
+  .text {
+    padding: 10px 0 0 0;
+    @include font-size(14, 14);
+    @include margin-start(0px);
+    color: $body-text-color;
+    font-weight: $p-weight;
+  }
+  &.no-border {
+    border: none !important;
+    padding: 0 20px;
+  }
+}
+
+//Icons Box Size
+
+.icon-normal {
+  @include margin-end(5px);
+  color: $header-font-color;
+  @include text_align_start;
+  display: inline-block;
+}
+
+.icon-box-larg {
+  position: relative;
+  display: inline-block;
+  font-size: 64px;
+  &.box-square, &.box-circle {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    margin-bottom: 0;
+  }
+}
+
+.larg {
+  .icon-box-header {
+    .box-square, .box-circle {
+      position: relative;
+      display: inline-block;
+      font-size: 64px;
+      width: 200px;
+      height: 200px;
+      line-height: 200px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.mediam {
+  .icon-box-header {
+    .box-square, .box-circle {
+      position: relative;
+      display: inline-block;
+      font-size: 48px;
+      width: 125px;
+      height: 125px;
+      line-height: 125px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.icon-box-medium {
+  position: relative;
+  display: inline-block;
+  font-size: 48px;
+  &.box-square, &.box-circle {
+    width: 125px;
+    height: 125px;
+    line-height: 125px;
+    margin-bottom: 0;
+  }
+}
+
+.small {
+  .icon-box-header {
+    .box-square, .box-circle {
+      position: relative;
+      display: inline-block;
+      font-size: 21px;
+      width: 64px;
+      height: 64px;
+      line-height: 64px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.icon-box-small {
+  position: relative;
+  display: inline-block;
+  font-size: 21px;
+  &.box-square, &.box-circle {
+    width: 64px;
+    height: 64px;
+    line-height: 64px;
+    margin-bottom: 0;
+  }
+}
+
+.image-cropper {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  top: 0;
+  bottom: 0;
+  margin-bottom: 30px;
+
+  &.box-circle {
+    border-radius: 99em;
+    &.overlay {
+      &:before {
+        border-radius: 99em;
+      }
+    }
+  }
+  img {
+    position: absolute;
+    top: 50%;
+    @include start(50%);
+    @if ($global-direction == "rtl") {
+      transform: translate(50%, -50%);
+    } @else {
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &.larg {
+    width: 200px;
+    height: 200px;
+  }
+  &.medium {
+    width: 128px;
+    height: 128px;
+  }
+  &.small {
+    width: 64px;
+    height: 64px;
+  }
+}
+
+.img {
+  display: inline;
+  margin: 0 auto;
+  height: 100%;
+  width: auto;
+}
+
+.dark-bg {
+  .countUp {
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}
+
+// < 768px
+@include break(xsd-min) {
+
+  .icon-box-larg.box-square,
+  .icon-box-larg.box-circle,
+  .icon-box-medium.box-square,
+  .icon-box-medium.box-circle {
+    width: px-to-rem(64);
+    height: px-to-rem(64);
+    line-height: px-to-rem(64);
+    font-size: 21px;
+  }
+}

@@ -1,0 +1,42 @@
+.dima-navbar-wrap.desk-nav.dima-navbar-center .dima-navbar nav .dima-nav > li > a,
+.dima-navbar-wrap.desk-nav.dima-navbar-center .dima-navbar nav .dima-nav-end > li > a {
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.dima-navbar-wrap.desk-nav {
+  &.dima-navbar-center {
+
+    .dima-navbar {
+      nav {
+        display: table;
+        margin: 0 auto;
+        text-align: center;
+      }
+      .dima-nav {
+      }
+      .logo-cenetr {
+        .logo {
+          position: relative;
+          z-index: 1;
+          margin: 0 auto;
+          padding: 0 15px;
+          height: $a-height + px;
+          p {
+            text-align: center;
+            position: relative;
+            display: table-cell;
+          }
+        }
+      }
+    }
+
+    &.fixed {
+      .logo-cenetr {
+        .logo {
+          height: $a-height-small+ px;
+        }
+      }
+    }
+  }
+}

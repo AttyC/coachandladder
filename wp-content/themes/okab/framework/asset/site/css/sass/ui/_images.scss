@@ -1,0 +1,100 @@
+img, a img {
+  border: none;
+  padding: 0;
+  max-width: 100%;
+  height: auto;
+  image-rendering: optimizeQuality;
+  vertical-align: middle;
+}
+
+a.dima-img {
+  display: block;
+}
+
+//Left images for authors and testemonial
+.start-image {
+  @include float_start;
+
+  @include margin-end(30px);
+
+  overflow: hidden;
+
+  &.right {
+    @include margin-end(0);
+  }
+}
+
+.end-image {
+  @include float_end;
+
+  @include margin-start(30px);
+
+  overflow: hidden;
+
+  &.right {
+    @include margin-start(0px);
+  }
+}
+
+.end-image, .start-image {
+  .circle {
+    @include border-radius(80px);
+  }
+}
+
+
+
+.magnific-gallery {
+  .column-item {
+    @include float-start;
+
+    &.columns-1 {
+      width: 100%;
+    }
+    &.columns-2 {
+      width: 50%;
+    }
+    &.columns-3 {
+      width: 33.33%;
+    }
+    &.columns-4 {
+      width: 25%;
+    }
+    &.columns-5 {
+      width: 20%;
+    }
+    &.columns-6 {
+      width: 16.666%;
+    }
+  }
+}
+
+.columns-2 {
+  .column-item {
+    width: 50%;
+  }
+}
+
+.columns-3 {
+  .column-item {
+    width: 33.3333%;
+  }
+}
+
+.columns-4 {
+  .column-item {
+    width: 25%;
+  }
+}
+
+.columns-5 {
+  .column-item {
+    width: 20%;
+  }
+}
+
+.columns-6 {
+  .column-item {
+    width: 16.6666%;
+  }
+}

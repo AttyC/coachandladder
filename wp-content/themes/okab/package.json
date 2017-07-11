@@ -1,0 +1,35 @@
+{
+  "name": "OK",
+  "version": "1.0.0",
+  "description": "Ok-Grids System.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ok",
+    "grids",
+    "okab"
+  ],
+  "author": "Tahri Adel",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.12.10",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-clean": "^0.3.1",
+    "gulp-line-ending-corrector": "^1.0.1",
+    "gulp-concat": "^2.6.0",
+    "gulp-jshint": "^1.11.2",
+    "gulp-minify-css": "^1.2.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.4",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.2.0",
+    "sassdoc": "^2.1.15"
+  },
+  "dependencies": {
+    "lodash": "^3.10.1"
+  }
+}

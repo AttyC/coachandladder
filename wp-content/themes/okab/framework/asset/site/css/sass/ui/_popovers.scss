@@ -1,0 +1,142 @@
+$zindex-popover: 9999;
+$popover-max-width: 300px;
+$font-size-base: 14px;
+$popover-bg: #FFFFFF;
+$popover-title-bg: $popover-bg;
+$popover-arrow-width: 5px;
+$popover-arrow-outer-width: 14px;
+$popover-arrow-width: 13px;
+$popover-arrow-outer-fallback-color: $border-color;
+$popover-arrow-outer-color: $border-color;
+$popover-arrow-color: #fff;
+$popover-fallback-border-color: $border-color;
+$popover-border-color: $border-color;
+$border-radius-large: 0px;
+.popover {
+  position: absolute;
+  top: 0;
+  @include start(0);
+  z-index: $zindex-popover;
+  display: none;
+  max-width: $popover-max-width;
+  padding: 1px;
+  font-size: $font-size-base;
+  background-color: $popover-bg;
+  background-clip: padding-box;
+  border: 1px solid $popover-border-color;
+  border-radius: $border-radius-large;
+  @include box-shadow(0 5px 10px rgba(0, 0, 0, .2));
+
+  // Offset the popover to account for the popover arrow
+  &.top {
+    margin-top: -$popover-arrow-width;
+  }
+  &.right {
+    @include margin-start($popover-arrow-width);
+  }
+  &.bottom {
+    margin-top: $popover-arrow-width;
+  }
+  &.left {
+    @include margin-start(-$popover-arrow-width);
+  }
+}
+
+.popover-title {
+  margin: 0; // reset heading margin
+  padding: 8px 14px;
+  font-size: $font-size-base;
+  background-color: $popover-title-bg;
+  border-bottom: 1px solid darken($popover-title-bg, 5%);
+  border-radius: ($border-radius-large - 1) ($border-radius-large - 1) 0 0;
+}
+
+.popover-content {
+  padding: 9px 14px;
+}
+
+// Arrows
+//
+// .arrow is outer, .arrow:after is inner
+
+.popover > .arrow {
+  &,
+  &:after {
+    position: absolute;
+    display: block;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+  }
+}
+
+.popover > .arrow {
+  border-width: $popover-arrow-outer-width;
+}
+
+.popover > .arrow:after {
+  border-width: $popover-arrow-width;
+  content: "";
+}
+
+.popover {
+  &.top > .arrow {
+    @include start(50%);
+    @include margin-start(-$popover-arrow-outer-width);
+    border-bottom-width: 0;
+    border-top-color: $popover-arrow-outer-color;
+    bottom: -$popover-arrow-outer-width;
+    &:after {
+      content: " ";
+      bottom: 1px;
+      @include margin-start(-$popover-arrow-width);
+      border-bottom-width: 0;
+      border-top-color: $popover-arrow-color;
+    }
+  }
+  &.right > .arrow {
+    top: 50%;
+    @include start(-$popover-arrow-outer-width);
+    margin-top: -$popover-arrow-outer-width;
+    border-left-width: 0;
+    @include border-end-color($popover-arrow-outer-color);
+    &:after {
+      content: " ";
+      @include start(1px);
+      bottom: -$popover-arrow-width;
+      border-left-width: 0;
+      @include border-end-color($popover-arrow-color);
+    }
+  }
+  &.bottom > .arrow {
+    @include start(50%);
+    @include margin-start(-$popover-arrow-outer-width);
+    border-top-width: 0;
+    border-bottom-color: $popover-arrow-outer-fallback-color; // IE8 fallback
+    border-bottom-color: $popover-arrow-outer-color;
+    top: -$popover-arrow-outer-width;
+    &:after {
+      content: " ";
+      top: 1px;
+      @include margin-start(-$popover-arrow-width);
+      border-top-width: 0;
+      border-bottom-color: $popover-arrow-color;
+    }
+  }
+
+  &.left > .arrow {
+    top: 50%;
+    @include end(-$popover-arrow-outer-width);
+    margin-top: -$popover-arrow-outer-width;
+    border-right-width: 0;
+    @include border-end-color($popover-arrow-outer-color);
+    &:after {
+      content: " ";
+      @include end(1px);
+      border-right-width: 0;
+      @include border-start-color($popover-arrow-color);
+      bottom: -$popover-arrow-width;
+    }
+  }
+}

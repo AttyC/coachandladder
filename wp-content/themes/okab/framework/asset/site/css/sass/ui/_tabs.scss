@@ -1,0 +1,300 @@
+.dima-tabs {
+  display: block;
+
+  &.columns-2-tab {
+    ul.dima-tab-nav {
+      li {
+        width: 50%;
+      }
+    }
+  }
+  &.columns-3-tab {
+    ul.dima-tab-nav {
+      li {
+        width: 33.333333%;
+      }
+    }
+  }
+  &.columns-4-tab {
+    ul.dima-tab-nav {
+      li {
+        width: 25%;
+      }
+    }
+  }
+  &.columns-5-tab {
+    ul.dima-tab-nav {
+      li {
+        width: 20%;
+      }
+    }
+  }
+  &.columns-6-tab {
+    ul.dima-tab-nav {
+      li {
+        width: 16.6666666%;
+      }
+    }
+  }
+}
+
+ul.dima-tab-nav {
+  overflow: auto;
+  position: relative;
+  width: 100%;
+  clear: both;
+  margin: 0;
+  z-index: 10;
+
+  &.float-start {
+    @include margin-end(-1px);
+    @include margin-start(1px);
+    .tab {
+      &.active {
+        @include border-end-width(0);
+      }
+    }
+
+  }
+
+  &.float-end {
+    @include margin-end(1px);
+    @include margin-start(-1px);
+    .tab {
+      &.active {
+        @include border-start-width(0);
+      }
+    }
+  }
+
+  &.float-start, &.float-end {
+    width: 25%;
+    .tab {
+      width: 100% !important;
+      border-bottom: none;
+      @include border-end(1px solid $tab-nav-border-color);
+      &:last-child {
+        border-bottom: 1px solid $tab-nav-border-color;
+      }
+    }
+  }
+
+  .tab {
+    @include float_start;
+
+    margin-bottom: 0;
+    text-align: center;
+    border: 1px solid $tab-nav-border-color;
+
+    font-family: $font-family-headings;
+    &.tab {
+      @include font-size(14, 16);
+      font-weight: $font-weight-semibold;
+      background-color: $tab-nav-bg;
+      display: block;
+      > a {
+        display: inline-block;
+        width: 100%;
+        color: $tab-nav-color;
+        padding: 17px 30px;
+      }
+      i {
+        @include margin-end(10px);
+      }
+    }
+
+  }
+}
+
+//2-Content*/
+
+.dima-tab-content {
+  overflow: auto;
+  position: relative;
+  margin-bottom: 30px;
+  z-index: 2;
+  margin-top: -1px;
+  @include transition(all 0.3s ease-in);
+  .dima-tab_content {
+    padding: 20px 30px;
+    display: none;
+    min-height: 160px;
+    &.active {
+      display: block;
+    }
+  }
+  &.float-start, &.float-end {
+    width: 75%;
+    margin-top: 0;
+    z-index: 5;
+  }
+
+  &.float-end {
+    @include start(-1px);
+  }
+
+  &.float-start {
+    @include end(-1px);
+  }
+}
+
+.dima-tab-style {
+  ul.dima-tab-nav.top {
+    .tab {
+
+      @include border-end-width(0);
+      &:last-child {
+        @include border-end(1px solid $tab-nav-border-color);
+      }
+      &.active {
+        background-color: $tab-nav-bg-active !important;
+        border-bottom-color: $tab-cnt-bg !important;
+        color: $tab-nav-color;
+        cursor: default;
+      }
+    }
+  }
+  ul.dima-tab-nav {
+    &.float-start, &.float-end {
+      .tab {
+        &.active {
+          background-color: $tab-nav-bg-active !important;
+        }
+      }
+    }
+  }
+
+  .dima-tab-content {
+    border: 1px solid $tab-nav-border-color;
+    background-color: $tab-cnt-bg;
+  }
+}
+
+.dima-tab-line-style {
+  .dima-tab-content {
+    .dima-tab_content {
+      padding: 20px 0;
+    }
+  }
+  ul.dima-tab-nav {
+    &.float-start {
+      @include margin-end(30px)
+    }
+    &.float-end {
+      @include margin-start(30px)
+    }
+    .tab {
+      @include margin-end(10px);
+      border: none;
+      border-bottom: 1px solid $tab-nav-border-color;
+      &.active {
+        border-color: $theme-color !important;
+      }
+      background: transparent;
+    }
+  }
+}
+
+.fade.in {
+  opacity: 1;
+}
+
+.fade {
+  opacity: 0;
+  -webkit-transition: opacity 0.9s ease;
+  transition: opacity 0.9s ease;
+}
+
+.dark-bg {
+  .dima-tab-line-style {
+    .dima-tab-content {
+      .dima-tab_content {
+        color: rgba(#ffffff, 0.8);
+        p {
+          color: rgba(#ffffff, 0.8);
+        }
+      }
+    }
+  }
+  ul.dima-tab-nav,
+  ul.dima-tab-nav.float-start,
+  ul.dima-tab-nav.float-end {
+    .tab {
+      border-color: rgba(#ffffff, 0.4);
+      > a {
+        color: #ffffff;
+      }
+    }
+  }
+
+  .dima-tab-style {
+    .dima-tab-content {
+      border-color: rgba(#ffffff, 0.4);
+    }
+    ul.dima-tab-nav,
+    ul.dima-tab-nav.float-start,
+    ul.dima-tab-nav.float-end {
+      .tab {
+        &:last-child {
+          @include border-end(1px solid rgba(#ffffff, 0.4));
+        }
+
+        border-color: rgba(#ffffff, 0.4);
+        background: rgba(#ffffff, 0.1);
+        &.active {
+          > a {
+            color: $tab-nav-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+@include break(sd-max) {
+  .dima-tabs {
+    &.dima-tab-style {
+      &.columns-5-tab,
+      &.columns-6-tab {
+        ul.dima-tab-nav {
+          &.top {
+            li.tab {
+              width: auto;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@include break(sd-min) {
+
+  .dima-tabs {
+    &.dima-tab-style {
+      ul.dima-tab-nav {
+        &.top {
+          li.tab {
+            @include border-end-width(1px);
+            border-bottom-width: 0;
+            &:last-child {
+              border-bottom-width: 1px;
+            }
+          }
+        }
+      }
+    }
+    ul.dima-tab-nav {
+      width: 100% !important;
+
+      li.tab {
+        width: 100% !important;
+        &.active {
+          @include border-end-width(1px !important);
+          @include border-start-width(1px !important);
+        }
+      }
+    }
+  }
+
+}

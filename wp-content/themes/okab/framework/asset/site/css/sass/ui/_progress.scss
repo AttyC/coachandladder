@@ -1,0 +1,129 @@
+.progress {
+  height: 10px;
+  margin-bottom: 10px;
+  background: $widget-border-color;
+  &.progress-shadow {
+    @include box-shadow(inset 0 1px 5px rgba(0, 0, 0, 0.45));
+    .progress-bar {
+      @include box-shadow(inset 0 1px 5px rgba(0, 0, 0, 0.45));
+    }
+  }
+
+  .progress-bar {
+    position: relative;
+    @include float_start();
+    width: 0;
+    height: 100%;
+    font-size: 12px;
+    line-height: 20px;
+    color: #ffffff;
+    text-align: center;
+    background-color: $theme-color;
+    transition: width 0.6s ease;
+  }
+
+  .percent {
+    position: absolute;
+    @include end(-18px);
+    bottom: 18px;
+    height: 27px;
+    padding: 2px 6px;
+    font-size: 14px;
+    line-height: 21px;
+    color: white;
+    background-color: $theme-color;
+    span {
+      display: block;
+      position: absolute;
+      z-index: 2;
+      bottom: -5px;
+      @include start(37%);
+      @include border-start(5px solid transparent);
+      @include border-end(5px solid transparent);
+      border-top: 5px solid transparent;
+      border-top-color: $theme-color;
+    }
+  }
+}
+
+.h-skill, .h-skill-bar {
+  color: $body-text-color;
+  margin-bottom: 30px;
+  font-weight: $p-weight;
+}
+
+.h-skill {
+  position: relative;
+  .percent-end {
+    position: absolute;
+    @include end(0);
+    bottom: -2px;
+    font-size: 14px;
+    line-height: 21px;
+    color: $body-text-color;
+    font-weight: $p-weight;
+  }
+}
+
+.progress-striped .progress-bar {
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 40px 40px;
+}
+
+.progress.active .progress-bar {
+  -webkit-animation: progress-bar-stripes 2s linear infinite;
+  animation: progress-bar-stripes 2s linear infinite;
+}
+
+//circular
+.circular-bar {
+  position: relative;
+  .circular-bar-content {
+    position: relative;
+    label {
+      position: relative;
+      display: block;
+      font-weight: $p-weight;
+      @include font-size(18, 20);
+      top: -5px;
+    }
+  }
+  strong {
+    margin-top: -15px;
+    display: block;
+    font-weight: $p-weight;
+    @include font-size(14, 24);
+  }
+}
+
+.dark-bg {
+  .progress {
+    background: rgba(#fff, 0.4);
+  }
+
+  .circular-bar strong,
+  .circular-bar-content,
+  .h-skill-bar, .h-skill, .percent-end {
+    color: rgba(#fff, 0.8);
+  }
+
+}
+
+@-webkit-keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@keyframes progress-bar-stripes {
+  from {
+    background-position: 40px 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}

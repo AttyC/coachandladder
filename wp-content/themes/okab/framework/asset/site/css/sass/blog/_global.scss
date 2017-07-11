@@ -1,0 +1,71 @@
+///NEW GRIDS BLOG*//
+.dima-isotope-container {
+  margin: 0 -12px;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+
+  &.isotope-no-margin {
+    margin: 0;
+
+    .hentry {
+      margin: 0;
+      border-top: 0 solid transparent;
+      @include border-start(0 solid transparent);
+      @include border-end(0 solid transparent);
+      border-bottom: 0 solid transparent;
+      -webkit-background-clip: padding-box;
+      -moz-background-clip: padding-box;
+      background-clip: padding-box;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+  }
+}
+
+.ok-clm-warp {
+  margin: 0 -12px;
+}
+
+.products-grids,
+.dima-isotope-container {
+  div.hentry,
+  article.hentry {
+    margin: 0;
+    border-top: 0 solid transparent;
+    @include border-end(1em solid transparent);
+    @include border-start(1em solid transparent);
+    border-bottom: 2em solid transparent;
+    -webkit-background-clip: padding-box;
+    -moz-background-clip: padding-box;
+    background-clip: padding-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+}
+
+.columns-2 .hentry {
+  width: 50%;
+}
+
+.columns-3 .hentry {
+  width: 33.3333333%;
+}
+
+.columns-4 .hentry {
+  width: 25%;
+}
+
+@include break(sd-min-sd-max) {
+  .columns-3 .hentry, .columns-4 .hentry {
+    width: 50%;
+  }
+}
+
+@include break(sd-min) {
+  [class*="columns-"] .hentry {
+    width: 100%;
+  }
+}

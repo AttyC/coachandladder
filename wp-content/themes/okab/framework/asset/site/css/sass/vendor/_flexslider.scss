@@ -1,0 +1,365 @@
+.flex-container, .flex-slider {
+  a:hover, a:focus {
+    outline: none;
+  }
+}
+
+.flexslider {
+  ul.flex-control-nav, ol.flex-direction-nav,
+  .slides, ol.flex-control-nav, ul.flex-direction-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+}
+
+.flex-pauseplay span {
+  text-transform: capitalize;
+}
+
+/*.pattern-slider {
+  background: url('../images/patterns/slaid-patt.png');
+  background-repeat: repeat;
+  position: absolute;
+  opacity: 0.9;
+  @include start(0px);
+  top: 0;
+  @include end(0);
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}*/
+
+.flexslider {
+  .slides {
+    > li {
+      display: none;
+      -webkit-backface-visibility: hidden;
+      width: 100%;
+      height: 100% !important;
+      margin: 0;
+      padding: 0;
+      -webkit-background-size: cover !important;
+      -moz-background-size: cover !important;
+      -o-background-size: cover !important;
+      background-size: cover !important;
+    }
+    img {
+      width: 99.8%;
+      display: block;
+    }
+    // Clearfix for the .slides element
+    &:after {
+      content: "\0020";
+      display: block;
+      clear: both;
+      visibility: hidden;
+      line-height: 0;
+      height: 0;
+    }
+    html[xmlns] & {
+      display: block;
+    }
+    * html & {
+      height: 1%;
+    }
+    .no-js & {
+      > li {
+        &:first-child {
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+.flexslider {
+  margin: 0;
+  position: relative;
+  zoom: 1;
+  .slides {
+    zoom: 1;
+  }
+}
+
+.flex-viewport {
+  max-height: 2000px;
+  @include transition(0.3s ease-in-out);
+  direction: ltr;
+}
+
+.carousel {
+  margin-top: 15px;
+  .slides li {
+    cursor: pointer;
+    @include margin-end(15px);
+    width: 110px !important;
+    height: 110px !important;
+    opacity: 0.5;
+    @include transition(0.2s ease-in-out);
+    &.flex-active-slide {
+      opacity: 1;
+    }
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+.flex-direction-nav {
+  *height: 0;
+  a {
+    text-decoration: none;
+    display: block;
+    width: 30px;
+    height: 30px;
+    margin: -10px 0 0;
+    position: absolute;
+    top: 50%;
+    z-index: 10;
+    overflow: hidden;
+    opacity: 0;
+    cursor: pointer;
+    color: #FFF;
+    @include transition(0.3s ease-in-out);
+    &:before {
+      font-family: $FontAwesome;
+      font-size: 25px;
+      line-height: 30px;
+      display: inline-block;
+      margin-bottom: 10px;
+      @if ($global-direction == "rtl") {
+        content: '\f054';
+      } @else {
+        content: '\f053';
+      }
+    }
+    &.flex-next:before {
+      @if ($global-direction == "rtl") {
+        content: '\f053';
+      } @else {
+        content: '\f054';
+      }
+    }
+  }
+  .flex-prev {
+    @include start(-50px);
+  }
+  .flex-next {
+    @include end(-50px);
+    @include text_align_end();
+  }
+  .flexslider:hover & {
+    .flex-prev {
+      opacity: 1;
+      @include start(25px);
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .flex-next {
+      opacity: 1;
+      @include end(25px);
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  .flex-disabled {
+    opacity: 0 !important;
+    filter: alpha(opacity=0);
+    cursor: default;
+  }
+}
+
+.flex-pauseplay a {
+  display: block;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom: 5px;
+  @include start(10px);
+  opacity: 0.8;
+  z-index: 10;
+  overflow: hidden;
+  cursor: pointer;
+  color: #000;
+  &:before {
+    font-family: $FontAwesome;
+    font-size: 20px;
+    display: inline-block;
+    content: '\f004';
+  }
+  &:hover {
+    opacity: 1;
+  }
+  .flex-play:before {
+    content: '\f003';
+  }
+}
+
+//
+// Control Nav
+//
+.small-control {
+  .flex-control-nav {
+    bottom: 10px;
+    @include start(0);
+    li {
+      float: none;
+      margin: 0 4px 8px 4px;
+      a {
+        width: 10px;
+        height: 10px;
+      }
+    }
+    li:nth-child(2n+3) {
+      clear: none;
+    }
+  }
+}
+
+.flex-control-nav {
+  width: 100%;
+  position: absolute;
+  bottom: 45px;
+  text-align: center;
+  z-index: 10;
+  @include start(47%);
+  li {
+    margin: 0 8px 16px 8px;
+    display: inline-block;
+    zoom: 1;
+    *display: inline;
+    @include float_start();
+  }
+  li:nth-child(2n+3) {
+    @include clear_end();
+  }
+}
+
+.flex-control-paging li {
+  a {
+    width: 13px;
+    height: 13px;
+    display: block;
+    background: rgba(255, 255, 255, 0);
+    cursor: pointer;
+    text-indent: -9999px;
+    border: 1px solid #FFF;
+    &:hover {
+      background: #FFF;
+    }
+    &.flex-active {
+      background: #FFF;
+      cursor: default;
+    }
+  }
+}
+
+.flex-control-thumbs {
+  margin: 0;
+  position: static;
+  overflow: hidden;
+  li {
+    width: 25%;
+    @include float_start();
+    margin: 0;
+  }
+  img {
+    width: 100%;
+    display: block;
+    opacity: .7;
+    cursor: pointer;
+    @include transition(0.3s ease-in-out);
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .flex-active {
+    opacity: 1;
+    cursor: default;
+  }
+}
+
+///
+// FlexSlider OKAB
+//
+
+.slider-thumb {
+  &.small-control.dima-six-thumb .flex-control-nav {
+    li {
+      width: 15.5% !important;
+
+      @include float_start;
+
+      @include margin-end(1.4%);
+
+      margin-bottom: 0;
+      margin-top: 1.4%;
+
+      @include margin-start(0px);
+
+      &:nth-child(6n) {
+        @include margin-end(0%);
+      }
+    }
+  }
+
+  &.small-control.dima-nine-thumb .flex-control-nav {
+    li {
+      width: 9.85554% !important;
+
+      @include float_start;
+
+      @include margin-end(1.4%);
+
+      margin-bottom: 0;
+      margin-top: 1.4%;
+
+      @include margin-start(0px);
+
+      &:nth-child(9n) {
+        @include margin-end(0%);
+      }
+    }
+  }
+
+  &.small-control .flex-control-nav {
+    li {
+      width: 108px !important;
+      height: auto !important;
+
+      //@include float_start();
+      @include margin-end(13px);
+
+      margin-bottom: 0;
+      margin-top: 10px;
+
+      @include margin-start(0px);
+    }
+  }
+
+  .flex-direction-nav a {
+    margin: -60px 0 0;
+  }
+}
+
+.flex-viewport {
+  overflow: hidden;
+}
+
+// +OKAB RESPONSIVE
+@include break(sd-max) {
+  .flex-direction-nav {
+    .flex-prev {
+      opacity: 1;
+      @include start(10px);
+    }
+    .flex-next {
+      opacity: 1;
+      @include end(10px);
+    }
+  }
+}

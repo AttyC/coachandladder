@@ -1,0 +1,71 @@
+.dima-iconbox {
+  h5.features-title {
+    font-size: 22px;
+    line-height: 1.4em;
+  }
+}
+
+.countUp {
+  .number {
+    font-weight: 400;
+  }
+}
+
+.dima-navbar-wrap.desk-nav .dima-navbar-transparent.dima-navbar {
+  box-shadow: none;
+}
+
+.di_green.dima-button{
+  background-color: #8bc34a;
+}
+
+.progress{
+  background: #f1f5f9;
+}
+
+.dima-iconbox:hover i.box-square.icon-box-hover, 
+.dima-iconbox:hover i.box-circle.icon-box-hover{
+	box-shadow: 0 0 0 2px #1565c0 !important;
+}
+
+.dima-iconbox:hover i.box-square.icon-box-hover, 
+.dima-iconbox:hover i.box-circle.icon-box-hover,
+.icon-box-header .box-square, 
+.icon-box-header .box-circle{
+    box-shadow: 0 0 0 2px #1565c0 !important;
+}
+
+.icon-box-header {
+  color: $header-font-color;
+  .box-square, .box-circle {
+    text-align: center;
+    background: #f6fbff;
+    @include box-shadow(0 0 0 2px $theme-color);
+    .topaz-border, .topaz-hover {
+        display: none;
+    }
+  }
+}
+
+.dima-pricing-table .dima-pricing-col .header.di_green{
+  background-color: #8bc34a;
+}
+.dima-pricing-table .dima-pricing-col .dima-pricing-row.di_green{
+    color: #8bc34a;
+}
+.stroke,
+.di_white.stroke{
+  border-width: 2px;
+}
+.widget-feedburner{
+  [type="submit"], .dima-button{
+    border-radius: 99px;
+  }
+}
+.top-footer .social-media li,
+.top-footer input[type="text"]{
+  border-color: #555555;
+}
+.countUp .number {
+  font-weight: 700;
+}

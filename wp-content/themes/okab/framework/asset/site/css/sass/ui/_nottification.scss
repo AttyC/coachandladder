@@ -1,0 +1,71 @@
+//  Nottification
+.wpcf7-response-output, .dima-alert {
+  position: relative;
+  margin-bottom: 1.313em;
+  padding: 25px;
+  @include font-size(16, 30);
+  clear: both;
+  color: rgba(255, 255, 255, .8);
+
+  a {
+    color: #FFF;
+    border-bottom: 1px dotted #FFFFFF;
+    &:hover {
+      color: #FFF;
+      border-bottom: none;
+    }
+  }
+
+  i {
+    color: #FFFFFF;
+    @include font-size(21, 25);
+    @include float_start();
+    @include padding-end(15px);
+  }
+  .header-alert {
+    margin: 0.05em 0 0.25em;
+    font-weight: $font-weight-semibold;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #FFF;
+    display: inline;
+    font-style: normal;
+    @include margin-end(5px)
+  }
+  p {
+    color: #FFF;
+    display: inline;
+  }
+  .close {
+    color: #fff;
+    @include font-size(20, 20);
+    font-weight: $font-weight-semibold;
+    position: absolute;
+    top: 7px;
+    @include end(10px);
+    line-height: 1;
+    padding: 0;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    -webkit-appearance: none;
+  }
+}
+
+.dima-alert-warning {
+  background-color: $warning-color !important;
+}
+
+.dima-alert-info {
+  background-color: $info-color !important;
+}
+
+.wpcf7-validation-errors,
+.dima-alert-error {
+  background-color: $error-color !important;
+}
+
+.dima-alert-success {
+  background-color: $success-color !important;
+}
+

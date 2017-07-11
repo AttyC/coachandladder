@@ -1,0 +1,174 @@
+ul {
+
+  &.icon-list {
+    margin: 0 !important;
+    li {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 5px;
+      @include padding-start(25px);
+      line-height: $base-line-height+px;
+
+      i {
+        position: absolute;
+        @include start(0);
+        text-align: center;
+        top: 3px;
+        width: $base-font-size+px;
+        @include font-size($base-font-size, $base-font-size);
+      }
+    }
+  }
+
+  &.with-border {
+    margin: 0;
+    &.dotted-border {
+      li {
+        border-top: 1px dotted $border-color;
+      }
+    }
+
+    &.dashed-border {
+      li {
+        border-top: 1px dashed $border-color;
+      }
+    }
+
+    &.first {
+      li {
+        border: none;
+        padding: 0;
+      }
+      > li {
+        border-top: 1px solid $widget-border-color;
+        display: block;
+        padding: 20px 0;
+        overflow: hidden;
+      }
+    }
+
+    li {
+      display: block;
+      padding: 20px 0;
+      overflow: hidden;
+      border-top: 1px solid $widget-border-color;
+
+      strong {
+        font-weight: bold;
+        color: $header-font-color;
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  ul.children {
+    @include padding-start(20px);
+    opacity: 0.7;
+    padding-top: 20px;
+    margin-bottom: -20px;
+    li {
+      &:last-child {
+        padding-bottom: 20px !important;
+      }
+    }
+  }
+
+  &.list-style {
+    margin: 0 !important;
+    li {
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 10px;
+
+      @include padding-start(20px);
+
+      line-height: 20px;
+
+      &:before {
+        content: "\f111";
+        font-family: $FontAwesome;
+        position: absolute;
+        top: 0;
+
+        @include start(0);
+
+        font-size: 10px;
+        line-height: 20px;
+        color: $theme-color;
+      }
+
+      &.no-icon {
+        &:before {
+          content: "";
+        }
+      }
+    }
+  }
+
+  &.stars {
+    li {
+      &:before {
+        content: "\f005";
+      }
+    }
+  }
+
+  &.angle {
+    li {
+      &:before {
+        @if $global-direction == "ltr" {
+          content: "\f054";
+        } @else {
+          content: "\f053";
+        }
+
+      }
+    }
+  }
+
+  &.check {
+    li {
+      &:before {
+        content: "\f00c";
+      }
+    }
+  }
+
+  &.thumb-tack {
+    li {
+      &:before {
+        content: "\f08d";
+      }
+    }
+  }
+}
+
+ul, ol {
+  padding: 0;
+}
+
+ul ul, ol ul {
+  list-style-type: circle;
+}
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: none;
+}
+
+dt {
+  font-weight: $h-weight;
+}
+
+dd {
+  @include margin-start(25px);
+}

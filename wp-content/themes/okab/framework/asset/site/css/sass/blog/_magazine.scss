@@ -1,0 +1,249 @@
+//magazin
+.dima-big-grid-wrapper {
+
+  &.hover-two {
+    .big-grid-meta {
+      background: rgba(28, 28, 26, .4);
+      -webkit-transition: all .3s ease;
+      -moz-transition: all .3s ease;
+      -o-transition: all .3s ease;
+      transition: all .3s ease;
+    }
+    article {
+      &:hover {
+        .big-grid-meta {
+          background: rgba(28, 28, 26, .7);
+          @include padding-start(35px);
+        }
+      }
+    }
+  }
+
+  article .post-img {
+    width: 100%;
+    position: relative;
+    line-height: 0;
+    color: #FFF;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+  }
+
+  .posts-list article,
+  .main-post article {
+    padding-bottom: 2px;
+    @include padding-end(2px);
+    @include float_start();
+    position: relative;
+    .big-cover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: 4;
+
+    }
+  }
+
+  .big-grid-meta {
+    padding: 25px;
+    color: #ffffff;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 5;
+    .entry-title {
+      a {
+        color: #ffffff;
+      }
+    }
+
+    ul {
+      @include text_align_start();
+      margin: 0;
+      li {
+        display: inline-block;
+        @include padding-end(10px);
+        a {
+          color: #ffffff;
+        }
+      }
+    }
+  }
+
+  .posts-list {
+    article {
+      .big-grid-meta {
+        .entry-title {
+          margin: 0;
+          line-height: 18px;
+        }
+      }
+    }
+  }
+
+  &.dima-big-grid-one {
+    .main-post article {
+      width: 66.66667%;
+      .post-img {
+        height: 468px;
+      }
+    }
+    .posts-list {
+      article {
+        width: 33.3333%;
+        .post-img {
+          height: 233px;
+        }
+      }
+    }
+  }
+
+  &.dima-big-grid-one-padding {
+    .main-post article {
+      @include padding-end(30px);
+      width: 66.66667%;
+      .post-img {
+        height: 490px;
+      }
+    }
+    .posts-list {
+      article {
+        &:first-child {
+          padding-bottom: 30px;
+        }
+
+        width: 33.3333%;
+        .post-img {
+          height: 230px;
+        }
+      }
+    }
+  }
+  &.dima-big-grid-two {
+    .main-post article {
+      width: 50%;
+      .post-img {
+        height: 372px;
+
+      }
+    }
+    .posts-list {
+      article {
+        width: 25%;
+        .post-img {
+          height: 185px;
+        }
+      }
+    }
+  }
+  &.dima-big-grid-three {
+    .main-post article {
+      width: 50%;
+      .post-img {
+        height: 372px;
+      }
+    }
+    .posts-list {
+      article {
+        width: 25%;
+        .post-img {
+          height: 185px;
+        }
+      }
+    }
+  }
+  &.dima-big-grid-for {
+    .main-post article {
+      width: 33.333%;
+      .post-img {
+        height: 245px;
+      }
+    }
+  }
+  &.dima-big-grid-five {
+    .main-post article {
+      width: 50%;
+      .post-img {
+        height: 372px;
+      }
+    }
+  }
+  &.dima-big-grid-slide-one {
+    .main-post article {
+      width: 100%;
+      .post-img {
+        height: 490px;
+      }
+    }
+  }
+  &.dima-big-grid-slide-two {
+    .main-post article {
+      width: 100%;
+      .post-img {
+        height: 372px;
+      }
+    }
+  }
+  &.dima-big-grid-slide-three {
+    .main-post article {
+      width: 100%;
+      .post-img {
+        height: 245px;
+      }
+    }
+  }
+  &.dima-big-grid-slide-for {
+    .main-post article {
+      width: 100%;
+      .post-img {
+        height: 185px;
+      }
+    }
+    .big-grid-meta {
+      .entry-title {
+        margin: 0;
+      }
+    }
+  }
+}
+
+@include break(sd-min) {
+  .dima-big-grid-wrapper {
+    &.dima-big-grid-one,
+    &.dima-big-grid-two,
+    &.dima-big-grid-three,
+    &.dima-big-grid-for,
+    &.dima-big-grid-five {
+      .main-post {
+        article {
+          width: 100%;
+          .post-img {
+            height: 320px;
+          }
+        }
+      }
+      .posts-list {
+        article {
+          width: 50%;
+          .post-img {
+            height: 170px;
+          }
+        }
+      }
+    }
+    &.dima-big-grid-one-padding {
+      .main-post {
+        article {
+          width: 100%;
+          @include padding-end(0);
+        }
+      }
+      .posts-list {
+        article {
+          width: 50%;
+        }
+      }
+    }
+  }
+}

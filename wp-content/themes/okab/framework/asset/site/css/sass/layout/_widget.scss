@@ -1,0 +1,238 @@
+//wordpress*/
+.widget {
+  position: relative;
+  &.widget_recent_entries,
+  &.widget_categories,
+  &.widget_meta,
+  &.widget_layered_nav,
+  &.widget_nav_menu,
+  &.widget_archive,
+  &.widget_pages,
+  &.twitter-widget,
+  &.widget_rss,
+  &.widget_product_categories,
+  &.widget_recent_comments {
+    a {
+      color: $body-text-color;
+
+      &:hover {
+        color: $theme-color;
+      }
+    }
+
+    .count {
+      @include float-end;
+    }
+
+    ul, ol {
+      li {
+        display: block;
+        padding: 13px 0;
+        overflow: hidden;
+        border-top: 1px solid $widget-border-color;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+  &.dima-author-box {
+    .dima-about-image, .dima-author-info {
+      position: relative;
+      z-index: 5;
+    }
+    .dima-about-image {
+      padding: 2px;
+      text-align: center;
+      margin-bottom: 30px;
+      float: none;
+      @include margin-end(0);
+    }
+  }
+
+  &.login-widget {
+    .dima-user-login-content {
+      @include padding-start(80px);
+    }
+  }
+
+  ul {
+    margin: 0;
+    list-style: none;
+    li {
+      .post-date {
+        display: block;
+      }
+      .rss-date {
+        display: block;
+      }
+    }
+  }
+
+  &.widget_calendar {
+    #wp-calendar {
+      caption {
+        margin-bottom: 20px;
+        color: $header-font-color;
+        text-align: center;
+        font-size: 14px;
+      }
+    }
+    table {
+      width: 100%;
+      margin: 0;
+      tr {
+        border: none;
+      }
+      th {
+        background: transparent;
+        padding: 1em 0;
+        color: $header-font-color;
+        font-size: 14px;
+        border: none;
+        text-align: center;
+        font-weight: $font-weight-semibold;
+      }
+
+      td {
+        padding: 0.79em;
+        text-align: center;
+      }
+
+      tfoot {
+        display: none;
+      }
+    }
+
+  }
+}
+
+.tagcloud {
+  padding: 0 !important;
+}
+
+//twitter*/
+.twitter-widget {
+  .fa-twitter {
+    @include padding-end(5px);
+    color: $theme-color;
+  }
+}
+
+//Insta*/
+.dima-instagram-images {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  .dima-instagram-row {
+    display: table-row;
+    .dima-instagram-image {
+      display: table-cell;
+      padding: 3px;
+      a {
+        display: block;
+        position: relative;
+      }
+    }
+  }
+}
+
+.instagram-button {
+  margin-top: 3px !important;
+  color: #ffffff !important;
+}
+
+.add-bottom-margin {
+  margin-bottom: 30px;
+}
+
+//Ads*/
+
+.dima-dsa125-widget {
+  .dima-dsa-cell {
+    width: 50%;
+    display: block;
+    padding: 5px;
+    @include float_start();
+    text-align: center;
+    line-height: 0;
+  }
+}
+
+.dima-dsa300-widget {
+  .dima-dsa-cell {
+    display: block;
+    padding: 5px;
+    @include float_start();
+    text-align: center;
+    line-height: 0;
+  }
+
+}
+
+.dima-dsa-widget-content {
+  overflow: hidden;
+  margin-bottom: 30px;
+  clear: both;
+}
+
+.widget {
+  .dima-dsa-widget-content {
+    margin-bottom: 0;
+  }
+}
+
+//Login*/
+.dima-author-avatar img {
+  position: relative;
+  @include float_start();
+  @include margin-end(30px);
+  margin-top: 0;
+}
+
+.dima-tabs {
+  .dima-author-avatar img {
+    @include margin-end(20px);
+  }
+}
+
+//tab*/
+.widget-container {
+  ul.dima-tab-nav li a {
+    padding: 20px 10px !important;
+  }
+  .dima-tab_content {
+    padding: 30px !important;
+  }
+}
+
+//helper*/
+.a_p_hover {
+  a {
+    color: $body-text-color !important;
+    &:hover {
+      color: $theme-color !important;
+    }
+  }
+}
+
+//new in pic*/
+.news-pic-widget {
+  .news-in-pic li.news-pic {
+    border: none;
+    width: 30.33%;
+    @include margin-end(2.39%);
+    margin-bottom: 2.5%;
+    clear: none;
+    @include float_start();
+  }
+}
+
+//login*/
+.login-widget {
+  .dima-author-avatar img {
+    width: 60px;
+    @include margin-end(20px);
+  }
+}

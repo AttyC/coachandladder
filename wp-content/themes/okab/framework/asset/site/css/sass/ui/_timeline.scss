@@ -1,0 +1,447 @@
+.dima-timeline {
+  position: relative;
+  margin: 0 auto 50px;
+  .post {
+    margin-bottom: 10px;
+  }
+
+  .timeline_element_start {
+    position: relative;
+    width: 100%;
+    @include float-start;
+    @include clear-start;
+    .post {
+      @include margin-end(30px);
+    }
+    .date {
+      position: absolute;
+      top: 50%;
+      margin-top: -25px;
+      @include start(50%);
+      @include margin-start(25px);
+    }
+  }
+  .timeline_element_end {
+    position: relative;
+    @include float-end;
+    @include clear-end;
+    width: 100%;
+    article, .timeline_element-content {
+      &:before {
+        @include start(50%);
+        top: 50%;
+      }
+    }
+    .post {
+      @include margin-start(30px);
+    }
+    .date {
+      position: absolute;
+      top: 50%;
+      margin-top: -25px;
+      @include end(50%);
+      @include margin-end(25px);
+    }
+  }
+  article, .timeline_element-content {
+    float: inherit;
+    margin: 10px 0;
+    width: 50%;
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      top: 50%;
+      @include end(50%);
+      @include transition(all 0.2s ease-in);
+    }
+    &:after {
+      width: 15px;
+      height: 15px;
+      @include margin-end(-6px);
+      @include margin-start(-6px);
+      margin-top: -20px;
+      background: $border-color;
+
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 30px;
+      margin-top: -27px;
+      @include margin-end(-10px);
+      @include margin-start(10px);
+    }
+    &:hover {
+      &:after {
+        background: $theme-color !important;
+        border-color: rgba(0, 0, 0, 0);
+      }
+      .dima-custom-heading, h5 {
+        a, i {
+          color: $theme-color;
+        }
+      }
+    }
+  }
+  // Blog Style
+  &.dima-timeline-blog {
+    > .timeline_element_end ~ .timeline_element_end {
+      margin-top: 0;
+    }
+    .timeline_element_end {
+      margin-top: 100px;
+      width: 50%;
+      .post {
+        @include padding-start(30px);
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 28px;
+          height: 0;
+          border-top: 1px solid #dfdfdf;
+          @include start(10px);
+          top: 54px;
+        }
+      }
+      article, .timeline_element-content {
+        position: relative;
+        &:after, &:before {
+          @include start(0);
+        }
+      }
+    }
+    .timeline_element_start {
+      width: 50%;
+      .post {
+        @include padding-end(30px);
+        &:before {
+          content: '';
+          position: absolute;
+          display: block;
+          width: 28px;
+          height: 0;
+          border-top: 1px solid #dfdfdf;
+          @include end(10px);
+          top: 54px;
+        }
+      }
+      article, .timeline_element-content {
+        position: relative;
+        &:after, &:before {
+          @include end(0);
+        }
+      }
+    }
+    article, .timeline_element-content {
+      margin: 10px 0;
+      width: 100%;
+      &:after, &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        background: $body-bg-color;
+        top: 40px;
+      }
+      &:after {
+        width: 14px;
+        height: 14px;
+        border: 1px solid $border-color;
+        @include margin-end(-7px);
+        @include margin-start(-9px);
+      }
+      &:before {
+        content: '';
+        position: absolute;
+        display: block;
+        width: 20px;
+        height: 30px;
+        @include margin-end(-7px);
+        @include margin-start(-7px);
+      }
+      &:hover {
+        &:after {
+          background: $theme-color;
+          border-color: rgba(0, 0, 0, 0);
+        }
+      }
+    }
+  }
+
+}
+
+.dima-timeline-list {
+  position: relative;
+  @include float_start();
+  .dima-iconbox {
+    @include float_start();
+  }
+
+  &.process-h {
+    &:before {
+      content: "";
+      position: absolute;
+      display: block;
+      top: 62.5px;
+      width: 75%;
+      height: 0;
+      border-top: 1px solid $border-color;
+      @include start(50%);
+      @if $global-direction == "ltr" {
+        transform: translateX(-50%);
+      } @else {
+        transform: translateX(50%);
+      }
+    }
+
+    &.small {
+      &:before {
+        top: 32px;
+      }
+    }
+    &.larg {
+      &:before {
+        top: 100px;
+      }
+    }
+    .dima-iconbox {
+      &:before {
+        content: none;
+      }
+      .features-content {
+        padding: 0 15px;
+      }
+    }
+    &.columns-3 {
+      .dima-iconbox {
+        width: 33.33%;
+      }
+    }
+    &.columns-4 {
+      .dima-iconbox {
+        width: 25%;
+      }
+    }
+    &.columns-5 {
+      .dima-iconbox {
+        width: 20%;
+      }
+    }
+  }
+  &.timeline-end {
+    .dima-iconbox, li {
+      &:before {
+        @include border-end(1px solid $border-color);
+        @include border-start(none);
+        @include start(-62.5px);
+      }
+    }
+    &.small {
+      .dima-iconbox, li {
+        &:before {
+          @include start(-32px);
+        }
+      }
+    }
+    &.larg {
+      .dima-iconbox, li {
+        &:before {
+          @include start(-85px);
+        }
+      }
+    }
+  }
+  &.small {
+    .dima-iconbox, li {
+      &:before {
+        @include start(32px);
+      }
+    }
+  }
+  &.larg {
+    .dima-iconbox, li {
+      &:before {
+        @include start(100px);
+      }
+    }
+  }
+  .dima-iconbox {
+    margin-bottom: 50px;
+    > i {
+      background: $body-bg-color;
+    }
+    &:before {
+      content: '';
+      @include border-start(1px solid $border-color);
+      @include start(62.5px);
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      padding-top: 71px;
+    }
+    &:last-child {
+      margin-bottom: 0;
+      &:before {
+        height: 0;
+        padding-top: 65px;
+      }
+    }
+  }
+}
+
+.h-line {
+  @include start(50%);
+  @include margin-start(-2px);
+  position: absolute;
+  top: 0;
+  bottom: 100%;
+  @include border-start(1px solid $border-color);
+  height: 100%;
+  &:after, &:before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: $border-color;
+    @include border-radius(99em);
+  }
+  &:before {
+    top: -15px;
+    @include end(-7px);
+  }
+  &:after {
+    bottom: -15px;
+    @include start(-8px);
+  }
+}
+
+//dark
+.dark-bg {
+  .dima-timeline {
+    .h-line, .box {
+      border-color: rgba(#ffffff, 0.4);
+      color: rgba(#fff, 0.8);
+      p {
+        color: rgba(#fff, 0.8);
+      }
+    }
+    .date {
+      > h5 {
+        color: rgba(#fff, 0.8);
+      }
+    }
+  }
+}
+
+//responsive
+@include break(sd-min) {
+  .dima-timeline {
+    .h-line {
+      display: none;
+    }
+  }
+  //TimeLine
+  .dima-timeline-list li:before {
+    @include start(32.5px);
+    padding-top: 65px;
+  }
+  //.dima-timeline.dima-timeline-blog .timeline_element_start
+  .dima-timeline {
+
+    .timeline_element-content {
+      float: none;
+      margin: 30px 0;
+      width: 100%;
+      &:after, &:before {
+        display: none;
+      }
+      .post {
+        margin: 0;
+      }
+      .date {
+        margin: 0;
+        top: 0;
+        @include start(0);
+      }
+    }
+  }
+  .dima-timeline.dima-timeline-blog .timeline_element_start,
+  .dima-timeline.dima-timeline-blog .timeline_element_end {
+    width: 100%;
+    margin-top: 0;
+    .post {
+      &:after,
+      &:before {
+        display: none;
+      }
+      @include padding-end(0%);
+      @include padding-start(0%);
+    }
+  }
+  .dima-timeline.dima-timeline-blog .timeline_element-content:before,
+  .dima-timeline.dima-timeline-blog .timeline_element-content:after,
+  .dima-timeline.dima-timeline-blog article:before,
+  .dima-timeline.dima-timeline-blog article:after {
+    display: none;
+  }
+
+  .dima-timeline-list {
+    &.process-h {
+
+      &.columns-4,
+      &.columns-5,
+      &.columns-6,
+      &.columns-3 {
+        &:before {
+          display: none;
+        }
+        .dima-iconbox {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+@include break(xsd-min) {
+  .dima-timeline-list {
+
+    &.process-v {
+      &.larg,
+      &.mediam {
+        .dima-iconbox {
+          &:before {
+            @include start(32px);
+          }
+          .icon-box-header {
+            .box-circle,
+            .box-square {
+              position: relative;
+              display: inline-block;
+              font-size: 21px;
+              width: 64px;
+              height: 64px;
+              line-height: 64px;
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+
+    &.process-h {
+      &:before {
+        display: none;
+      }
+      &[class*="columns-"] {
+        .dima-iconbox {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+}

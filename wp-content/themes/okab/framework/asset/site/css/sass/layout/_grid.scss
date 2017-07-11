@@ -1,0 +1,343 @@
+//  OK Grids System   *
+//  By PixelDima      *
+
+//   [MIXINS]
+
+@mixin columns($num: 1, $width: $MediumDevices) {
+  $contentWidth: $width + 2 * $gutter;
+  $single: ($width - $gutter * ($columns - 1)) / $columns;
+  max-width: $single * $num + $gutter * ($num - 1);
+}
+
+//  Get Column Width
+
+@mixin flexWidth($col: 1, $width: $MediumDevices, $gutter: $gutter) {
+  position: relative;
+  width: 100% / ($columns / $col);
+  padding: 0 ($gutter / 2);
+  @include float_start;
+}
+
+/// Get offset margin
+
+@mixin offset($col: 1, $width: $MediumDevices) {
+  @include margin-start(100% / ($columns / $col));
+}
+
+.boxed {
+  margin: 0 auto;
+  overflow: visible;
+  overflow-x: hidden;
+}
+
+////Columns Loop*/
+///  One Row //
+
+.ok-row {
+  position: relative;
+  margin: 0 (-1 * $gutter / 2);
+  clear: both;
+  z-index: 5;
+  .ok-row {
+    margin-bottom: 0;
+  }
+  &.no-margin {
+    margin: 0 0;
+    > [class*="ok-"] {
+      padding: 0 0;
+      margin: 0;
+    }
+  }
+  &:before, &:after {
+    display: table;
+    content: "";
+    line-height: 0;
+  }
+  &:after {
+    clear: both;
+  }
+}
+
+///Medium devices 960 and up//
+
+.container {
+  position: relative;
+  @include columns($columns, $MediumDevices);
+  margin: 0 auto;
+  clear: both;
+}
+
+.boxed {
+  max-width: $MediumDevices;
+  width: 90%;
+  .container {
+    width: 95% !important;
+  }
+}
+
+$i: $columns;
+
+@while $i > 0 {
+  div .ok-md-#{$i} {
+    @include flexWidth($i, $MediumDevices, $gutter);
+  }
+  $i: $i - 1;
+}
+
+$i: $columns;
+
+@while $i > 0 {
+  div .ok-offset-md-#{$i} {
+    @include offset($i, $MediumDevices);
+  }
+  $i: $i - 1;
+}
+
+div .no-md-offset {
+  @include margin-start(0);
+}
+
+/// responsive
+/// ELD :Extra Large devices Desktops
+/// LD  :Large devices Desktops
+/// MD  :Medium devices Desktops
+/// SD  :Small devices Tablets
+/// XSD :Extra small devices Phones
+@mixin hidden-on($size) {
+  @if $size == "XLD" {
+    .hidden-ld, .hidden-md, .hidden-sd, .hidden-xsd {
+      display: inherit !important;
+    }
+    .hidden-xld {
+      display: none !important;
+    }
+  }
+  @if $size == "LD" {
+    .hidden-xld, .hidden-md, .hidden-sd, .hidden-xsd {
+      display: inherit !important;
+    }
+    .hidden-ld {
+      display: none !important;
+    }
+  }
+  @if $size == "MD" {
+    .hidden-ld, .hidden-xld, .hidden-sd, .hidden-xsd {
+      display: inherit !important;
+    }
+    .hidden-md {
+      display: none !important;
+    }
+  }
+
+  @if $size == "SD" {
+    .hidden-ld, .hidden-md, .hidden-xld, .hidden-xsd {
+      display: inherit !important;
+    }
+    .hidden-sd {
+      display: none !important;
+    }
+  }
+  @if $size == "XSD" {
+    .hidden-ld, .hidden-md, .hidden-sd, .hidden-xld {
+      display: inherit !important;
+    }
+    .hidden-xsd {
+      display: none !important;
+    }
+  }
+}
+
+@mixin visible-on($size) {
+  @if $size == "XLD" {
+    .visible-ld, .visible-md, .visible-sd, .visible-xsd {
+      display: none !important;
+    }
+    .visible-xld {
+      display: inherit !important;
+    }
+
+  }
+  @if $size == "LD" {
+    .visible-xld, .visible-md, .visible-sd, .visible-xsd {
+      display: none !important;
+    }
+    .visible-ld {
+      display: inherit !important;
+    }
+  }
+  @if $size == "MD" {
+    .visible-ld, .visible-xld, .visible-sd, .visible-xsd {
+      display: none !important;
+    }
+    .visible-md {
+      display: inherit !important;
+    }
+  }
+  @if $size == "SD" {
+    .visible-ld, .visible-md, .visible-xld, .visible-xsd {
+      display: none !important;
+    }
+    .visible-sd {
+      display: inherit !important;
+    }
+  }
+  @if $size == "XSD" {
+    .visible-ld, .visible-md, .visible-sd, .visible-xld {
+      display: none !important;
+    }
+    .visible-xsd {
+      display: inherit !important;
+    }
+  }
+}
+
+@include visible-on("MD");
+
+@include hidden-on("MD");
+
+//(xsd)
+@include break(xsd-min) {
+  @include visible-on("XSD");
+  @include hidden-on("XSD");
+  .boxed {
+    width: 100%;
+  }
+  .container {
+    width: 90%;
+  }
+  div [class*="ok-"] {
+    //width: auto !important;
+    padding: 0; //!important issues with .dima-padding
+    margin-bottom: $gutter;
+  }
+  div [class*="ok-offset-"] {
+    @include margin-start(0);
+  }
+}
+
+@include break(sd-min) {
+  @include visible-on("XSD");
+  @include hidden-on("XSD");
+  body.boxed {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .container {
+    width: 90%;
+  }
+  $i: $columns;
+  $list-columns: $columns / 3, $columns / 2, $columns;
+  @each $item in $list-columns {
+    div .ok-xsd-#{$item} {
+      @include flexWidth($item, $SmallDevices, $gutter);
+    }
+    @if $item > 0 {
+      div .ok-offset-xsd-#{$item} {
+        @include offset($item, $SmallDevices);
+      }
+    }
+  }
+  div .no-xsd-offset {
+    @include margin-start(0);
+  }
+}
+
+//(sd) Tablet Grid  [768px,989px[
+@include break(sd-min-sd-max) {
+  @include visible-on("SD");
+  @include hidden-on("SD");
+  body.boxed {
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  .container {
+    width: 90%;
+  }
+  $i: $columns;
+  @while $i > 0 {
+    div .ok-sd-#{$i} {
+      @include flexWidth($i, $SmallDevices, $gutter);
+    }
+    @if $i > 0 {
+      div .ok-offset-sd-#{$i} {
+        @include offset($i, $SmallDevices);
+      }
+    }
+    $i: $i - 1;
+  }
+  div .no-sd-offset {
+    @include margin-start(0);
+  }
+  div [class*="ok-"] {
+    margin-bottom: 30px;
+  }
+  div .ok-row, div .ok-md-12 {
+    margin-bottom: 0;
+  }
+}
+
+///(ld) Desktop Large Grid 1140px and up*/
+@include break(ld-min) {
+  @include visible-on("LD");
+  @include hidden-on("LD");
+  .boxed {
+    max-width: $LargeDevices;
+    width: 90%;
+  }
+  .container {
+    @include columns($columns, $LargeDevices);
+  }
+  $i: $columns;
+  @while $i > 0 {
+    div .ok-ld-#{$i} {
+      @include flexWidth($i, $LargeDevices, $gutter);
+    }
+    @if $i > 0 {
+      div .ok-offset-ld-#{$i} {
+        @include offset($i, $LargeDevices);
+      }
+    }
+    $i: $i - 1;
+  }
+  div .no-ld-offset {
+    @include margin-start(0);
+  }
+}
+
+//(xld) Desktop Extra Large Grid 1600px and up
+@include break(xld-min) {
+  @include visible-on("XLD");
+  @include hidden-on("XLD");
+  .boxed {
+    max-width: $ExtraLargeDevices;
+    width: 90%;
+  }
+  .container {
+    @include columns($columns, $ExtraLargeDevices);
+  }
+  $i: $columns;
+  @while $i > 0 {
+    div .ok-xld-#{$i} {
+      @include flexWidth($i, $ExtraLargeDevices, $gutter);
+    }
+    @if $i > 0 {
+      div .ok-offset-xld-#{$i} {
+        @include offset($i, $ExtraLargeDevices);
+      }
+    }
+    $i: $i - 1;
+  }
+  div .no-xld-offset {
+    @include margin-start(0);
+  }
+}
+
+div .ok-row {
+  &.row-margin-bottom {
+    [class*="ok-"] {
+      margin-bottom: 30px;
+    }
+  }
+}

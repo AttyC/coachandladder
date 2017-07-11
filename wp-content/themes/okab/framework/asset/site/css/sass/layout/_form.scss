@@ -1,0 +1,514 @@
+//        Form
+$form-lable-color: $header-font-color;
+$form-lable-color-focus: $theme-color;
+$form-bg-color: rgba(0, 0, 0, 0);
+$form-border-color: $border-color;
+$form-border-color-focus: $theme-color;
+$form-color: #727272;
+
+::-webkit-input-placeholder {
+  color: $header-font-color;
+}
+
+::-moz-placeholder {
+  color: $header-font-color;
+}
+
+form {
+  position: relative;
+  max-width: 100%;
+  font-size: 1em;
+}
+
+//        Field
+form p,
+form .field {
+  margin: 0 0 30px;
+
+  &.last {
+    margin-bottom: 0;
+  }
+}
+
+//        Labels
+p > label,
+.field > label {
+  margin: 0 0 10px;
+  display: inline-block;
+  color: $form-lable-color;
+  font-family: $font-family-base $font-family-headings;
+
+  @include font-size(14, 14);
+
+  &.error {
+    color: #C10000;
+
+    @include font-size(12, 11);
+
+    margin-top: 5px;
+    padding: 0;
+  }
+
+  &.required {
+    &:after {
+      content: '*';
+      color: $theme-color;
+
+      @include margin-start(5px);
+    }
+  }
+}
+
+.search-form, .woocommerce-product-search {
+  position: relative;
+
+  &:before {
+    content: '\f002';
+    font-size: 22px;
+    line-height: 22px;
+    font-family: $FontAwesome;
+    position: absolute;
+
+    @include end(15px);
+
+    top: 15px;
+    color: $header-font-color;
+  }
+}
+
+//    Standard Inputs
+input[type="search"],
+textarea, select,
+input[type="text"],
+input[type="email"],
+input[type="date"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+input[type="tel"], .input {
+  width: 100%;
+}
+
+select {
+  background: transparent url("../../../../../images/br_down.svg") no-repeat;
+  background-size: 22px;
+  @include padding-end(35px);
+  @if ($global-direction != "rtl") {
+    background-position: center right;
+  } @else {
+    background-position: center left;
+  }
+}
+
+input[type="search"],
+textarea, select, input[type="text"], input[type="email"], input[type="date"], input[type="password"], input[type="number"], input[type="url"], input[type="tel"] {
+  margin: 0;
+  padding: 15.5px;
+  background-color: $form-bg-color;
+  border: 1px solid $form-border-color;
+  outline: none;
+  color: $form-color;
+  @include font-size($p, $p);
+  height: 50px;
+
+  @include transition(all 0.3s ease-in);
+
+  @include box-shadow(0em 0em 0em 0em rgba(0, 0, 0, 0.3) inset);
+
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  @include box-sizing(border-box);
+
+}
+
+.textarea, form textarea {
+  line-height: 1.33;
+  min-height: 8em;
+  height: 12em;
+  max-height: 24em;
+  resize: vertical;
+}
+
+textarea, input[type="checkbox"], input[type="radio"] {
+  vertical-align: top;
+}
+
+input[type="checkbox"], input[type="radio"] {
+  -webkit-appearance: none;
+  outline: none;
+}
+
+input.checkbox, input[type="checkbox"], input.radio, input[type="radio"] {
+  width: 15px;
+  height: 15px;
+  border: 1px solid $border-color;
+
+  @include margin-end(10px);
+
+  font-family: $font-family-base $font-family-headings;
+  vertical-align: middle;
+}
+
+input.radio, input[type="radio"] {
+  @include border-radius(50%);
+}
+
+input.checkbox:checked, input[type="checkbox"]:checked, input.radio:checked, input[type="radio"]:checked {
+  &:before {
+    display: block;
+    content: "\f00c";
+    position: relative;
+    font-family: $FontAwesome;
+    top: 50%;
+
+    @include start(50%);
+
+    font-size: 10px;
+
+    @include margin-start(-5px);
+
+    margin-top: -5px;
+  }
+}
+
+input.radio:checked, input[type="radio"]:checked {
+  &:before {
+    content: "\f111";
+    top: 50%;
+
+    @include start(50%);
+
+    font-size: 8px;
+
+    @include margin-start(-3px);
+
+    margin-top: -5px;
+  }
+}
+
+.textarea, form textarea {
+  min-height: 8em;
+  height: 8em;
+}
+
+//   Messages
+form .info.message, form .warning.message, form .error.message {
+  display: none;
+}
+
+// Assumptions /
+
+//this
+form .message:first-child {
+  margin-top: 0;
+}
+
+//On Form
+form.warning .warning.message {
+  display: block;
+}
+
+form.error .error.message {
+  display: block;
+}
+
+//        States
+//        Focus
+form input[type="search"]:focus,
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="date"]:focus,
+form input[type="password"]:focus,
+form input[type="url"]:focus,
+form input[type="tel"]:focus,
+form textarea:focus {
+  border-color: $form-border-color-focus !important;
+  -webkit-appearance: none;
+
+  @if $global-direction == "ltr" {
+    @include box-shadow(0.3em 0em 0em 0em $theme-color inset);
+  } @else {
+    @include box-shadow((-0.3em) 0em 0em 0em $theme-color inset);
+  }
+}
+
+//        ERROR
+form p.error textarea,
+form p.error input[type="text"],
+form p.error input[type="email"],
+form p.error input[type="date"],
+form p.error input[type="password"],
+form p.error input[type="number"],
+form p.error input[type="url"], form
+.field.error input[type="tel"],
+form .field.error textarea,
+form .field.error input[type="text"],
+form .field.error input[type="email"],
+form .field.error input[type="date"],
+form .field.error input[type="password"],
+form .field.error input[type="number"],
+form .field.error input[type="url"], form
+.field.error input[type="tel"] {
+  background-color: lighten($error-color, 17%);
+  border-color: $error-color;
+
+  @include border-start(none);
+
+  color: #D95C5C;
+
+  @include padding-start(1.2em);
+
+  @if $global-direction == "ltr" {
+    @include box-shadow(0.3em 0em 0em 0em $error-color inset);
+  } @else {
+    @include box-shadow((-0.3em) 0em 0em 0em #D95C5C inset);
+  }
+}
+
+//    Focus ERROR
+form p.error textarea:focus,
+form p.error input[type="text"]:focus,
+form p.error input[type="email"]:focus,
+form p.error input[type="date"]:focus,
+form p.error input[type="password"]:focus,
+form p.error input[type="number"]:focus,
+form p.error input[type="url"]:focus, form
+p.error input[type="tel"]:focus,
+form .field.error textarea:focus,
+form .field.error input[type="text"]:focus,
+form .field.error input[type="email"]:focus,
+form .field.error input[type="date"]:focus,
+form .field.error input[type="password"]:focus,
+form .field.error input[type="number"]:focus,
+form .field.error input[type="url"]:focus, form
+.field.error input[type="tel"]:focus {
+  border-color: rgba(255, 80, 80, 1);
+  color: rgba(255, 80, 80, 1);
+  -webkit-appearance: none;
+
+  @if $global-direction == "ltr" {
+    @include box-shadow(0.3em 0em 0em 0em #FF5050 inset);
+  } @else {
+    @include box-shadow((-0.3em) 0em 0em 0em #FF5050 inset);
+  }
+}
+
+//       Success
+form p.success textarea,
+form p.success input[type="text"],
+form p.success input[type="email"],
+form p.success input[type="date"],
+form p.success input[type="password"],
+form p.success input[type="number"],
+form p.success input[type="url"],
+form p.success input[type="tel"],
+form .field.success textarea,
+form .field.success input[type="text"],
+form .field.success input[type="email"],
+form .field.success input[type="date"],
+form .field.success input[type="password"],
+form .field.success input[type="number"],
+form .field.success input[type="url"],
+form .field.success input[type="tel"] {
+  background-color: lighten($success-color, 17%);
+  border-color: $success-color;
+
+  @include border-start(none);
+
+  color: #53cf00;
+
+  @include padding-start(1.2em);
+
+  @if $global-direction == "ltr" {
+    @include box-shadow(0.3em 0em 0em 0em $success-color inset);
+  } @else {
+    @include box-shadow((-0.3em) 0em 0em 0em $success-color inset);
+  }
+
+  opacity: 0.9;
+}
+
+//    Focus Success
+form p.success textarea:focus,
+form p.success input[type="text"]:focus,
+form p.success input[type="email"]:focus,
+form p.success input[type="date"]:focus,
+form p.success input[type="password"]:focus,
+form p.success input[type="number"]:focus,
+form p.success input[type="url"]:focus,
+form p.success input[type="tel"]:focus,
+form .field.success textarea:focus,
+form .field.success input[type="text"]:focus,
+form .field.success input[type="email"]:focus,
+form .field.success input[type="date"]:focus,
+form .field.success input[type="password"]:focus,
+form .field.success input[type="number"]:focus,
+form .field.success input[type="url"]:focus,
+form .field.success input[type="tel"]:focus {
+  opacity: 1;
+}
+
+//  Empty (Placeholder)
+// browsers require these rules separate
+
+form::-webkit-input-placeholder {
+  color: #AAAAAA;
+}
+
+form::-moz-placeholder {
+  color: #AAAAAA;
+}
+
+form:focus::-webkit-input-placeholder {
+  color: #999999;
+}
+
+form:focus::-moz-placeholder {
+  color: #999999;
+}
+
+// Error Placeholder
+
+form .error::-webkit-input-placeholder {
+  color: rgba(255, 80, 80, 0.4);
+}
+
+form .error::-moz-placeholder {
+  color: rgba(255, 80, 80, 0.4);
+}
+
+form .error:focus::-webkit-input-placeholder {
+  color: rgba(255, 80, 80, 0.7);
+}
+
+form .error:focus::-moz-placeholder {
+  color: rgba(255, 80, 80, 0.7);
+}
+
+//       Disabled
+form p:disabled,
+form p.disabled,
+form .field:disabled,
+form .field.disabled {
+  opacity: 0.5;
+}
+
+form p.disabled label,
+form .field.disabled label {
+  opacity: 0.5;
+}
+
+form p.disabled:disabled
+form .field.disabled:disabled {
+  opacity: 1;
+}
+
+// Variations
+
+//  Input w/ attached Button
+
+form input.attached {
+  width: auto;
+}
+
+//      Date Input
+form p.date > label,
+form .date.field > label {
+  position: relative;
+}
+
+form p.date > label:after,
+form .date.field > label:after {
+  font-family: 'FontAwesome';
+  position: absolute;
+  top: 2em;
+  @include end(0.5em);
+  content: '\f133';
+  font-size: 1.2em;
+  font-weight: normal;
+  color: $header-font-color;
+}
+
+//        CF7
+.wpcf7 select,
+.wpcf7 textarea,
+.wpcf7 input[type="text"],
+.wpcf7 input[type="password"],
+.wpcf7 input[type="datetime"],
+.wpcf7 input[type="datetime-local"],
+.wpcf7 input[type="date"],
+.wpcf7 input[type="month"],
+.wpcf7 input[type="time"],
+.wpcf7 input[type="week"],
+.wpcf7 input[type="number"],
+.wpcf7 input[type="email"],
+.wpcf7 input[type="url"],
+.wpcf7 input[type="search"],
+.wpcf7 input[type="tel"],
+.wpcf7 input[type="color"] {
+  width: 100%;
+}
+
+.wpcf7-display-none {
+  display: none;
+}
+
+.screen-reader-response ul {
+  margin-bottom: 30px;
+}
+
+@include break(sd-min) {
+
+  form {
+    [class*="ok-"] {
+      p, .field {
+        margin: 0;
+      }
+    }
+  }
+  .wpcf7-submit {
+    margin-top: 30px;
+  }
+  .gform_wrapper input,
+  div.ginput_complex.ginput_container.gf_name_has_2 span,
+  .gform_wrapper .top_label input,
+  .gform_wrapper .top_label select {
+    width: 100% !important;
+  }
+
+  .gform_wrapper ul li span {
+    padding: 0 !important;
+  }
+}
+
+.top-footer {
+  p > label,
+  .field > label {
+    color: $footer-color;
+  }
+  .search-form:before,
+  .woocommerce-product-search:before {
+    color: $footer-color;
+  }
+  ::-webkit-input-placeholder {
+    color: $footer-color;
+  }
+  ::-moz-placeholder {
+    color: $footer-color;
+  }
+}
+
+.dark-bg {
+  form {
+    p {
+      color: rgba(255, 255, 255, 0.8) !important;
+    }
+  }
+  input[type="search"], textarea, select,
+  input[type="text"], input[type="email"],
+  input[type="date"], input[type="password"],
+  input[type="number"], input[type="url"], input[type="tel"] {
+    color: rgba(255, 255, 255, 0.8);
+    border-color: rgba(255, 255, 255, 0.4);
+  }
+}

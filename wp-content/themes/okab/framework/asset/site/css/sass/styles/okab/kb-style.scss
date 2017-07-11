@@ -1,0 +1,190 @@
+@charset "UTF-8";
+/*------------------------------------------------------------------
+[knowledgebase Plugin Stylesheet]
+
+Project:	 PixelDIma OKAB
+Version:	 1.0
+Primary use: For OKAB Demo
+Style:       Light
+Direction :  LTR
+-------------------------------------------------------------------*/
+@import "../../extensions/modular-scale";
+@import "../../base/demo/okab/all_ltr";
+@import "../../base/all";
+
+.pakb-search input[type=submit] {
+  background-color: $theme-color;
+  &:hover {
+    background-color: darken($theme-color, 17%);
+  }
+}
+
+.pakb-list li a {
+  font-size: 14px;
+  @include margin-start(1.6em);
+}
+
+.pakb-list li > i {
+  @include start(0);
+  @include end(auto);
+}
+
+.pakb-main {
+  &.pakb-lists [class*="pakb-col-"] {
+    padding: 30px;
+    border: 1px solid $border-color;
+  }
+  h2 {
+    font-family: $font-family-headings;
+    i, a {
+      color: $header-font-color;
+    }
+    i {
+      @include float_start();
+      @include margin-end(10px);
+    }
+  }
+}
+
+.pakb-list i {
+  color: $body-text-color;
+}
+
+.pakb-list li,
+.pakb-sidebar ul li,
+.pakb-single,
+.pakb-main {
+  a {
+    color: $body-text-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.pakb-single {
+  a {
+    color: $theme-color;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.pakb-col-2, .pakb-col-3, .pakb-col-4 {
+  @include margin-end(4% !important);
+  @include margin-start(0 !important);
+
+  &:last-of-type {
+    @include margin-end(0 !important);
+  }
+}
+
+.si-arrow-right4 {
+  &:before {
+    @if ($global-direction == "rtl") {
+      content: "\edc3";
+    } @else {
+      content: "\edbb";
+    }
+  }
+}
+
+.si-arrow-left4 {
+  &:before {
+    @if ($global-direction != "rtl") {
+      content: "\edc3";
+    } @else {
+      content: "\edbb";
+    }
+  }
+}
+
+.pakb-archive > a {
+  background: transparent;
+  border: 1px solid $border-color !important;
+}
+
+.pakb-box {
+  .pakb-box-icon i, h2 {
+    color: $header-font-color !important;
+  }
+}
+
+.pakb-archive {
+  a {
+    color: $header-font-color !important;
+    font-weight: $font-weight-semibold;
+    font-family: $font-family-headings;
+    @if ($global-direction != "rtl") {
+      padding: 1em 1em 1em 2.4em;
+    } @else {
+      padding: 1em 2.4em 1em 1em;
+    }
+
+    &:hover {
+      color: $theme-color !important;
+      background: #ffffff;
+    }
+  }
+}
+
+.pakb-archive > a > i {
+  @include start(1em);
+  @include end(auto);
+}
+
+.pakb-list li {
+  padding: 5px 0;
+  i {
+    position: relative;
+    @include float_start();
+    top: 5px;
+  }
+}
+
+.widget {
+  .pakb-list li {
+    padding: 13px 0 !important;
+    overflow: hidden;
+    border-top: 1px solid $widget-border-color;
+  }
+}
+
+ul.pakb-breadcrumb {
+  font-size: 110%;
+  margin: 0;
+  padding: 25px 0;
+  border-bottom: 0;
+}
+
+.pakb-meta {
+  font-size: 100%;
+}
+
+.pakb-meta a:hover, .pakb-meta a:focus,
+.pakb-lists .pakb-view-all a:hover,
+.pakb-main h2 a:hover,
+.pakb-main h2 a:focus {
+  color: $theme-color;
+}
+
+.pakb-breadcrumb li.active,
+.pakb-breadcrumb-icon {
+  color: $body-text-color;
+  &:hover {
+    color: $header-font-color;
+  }
+}
+
+.pakb-breadcrumb a,
+.pakb-breadcrumb a:visited {
+  color: $theme-color;
+  &:hover {
+    color: $theme-color;
+  }
+}
+
+.pakb-search input[type=text] {
+  @include border-end-width(0);
+}

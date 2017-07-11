@@ -1,0 +1,34 @@
+.dropcap {
+  display: block;
+  @include float_start();
+  @include margin-end(15px);
+  width: 50px;
+  height: 50px;
+
+  &.dropcap-1 {
+    font-size: px-to-rem(60);
+    line-height: px-to-rem(60);
+    text-align: center;
+    color: $theme-color;
+  }
+  &.dropcap-2 {
+    font-size: px-to-rem(30);
+    line-height: px-to-rem(45);
+    position: relative;
+    top: 5px;
+    background: $theme-color;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+  }
+
+  &.dropcap-3 {
+    font-size: px-to-rem(30);
+    line-height: px-to-rem(45);
+    position: relative;
+    top: 5px;
+    background: $theme-color;
+    color: #fff;
+    text-align: center;
+  }
+} 

@@ -1,0 +1,31 @@
+<wpml-config>
+
+    <custom-types>
+        <custom-type translate="1">dima-portfolio</custom-type>
+        <custom-type translate="1">revslider</custom-type>
+    </custom-types>
+
+    <taxonomies>
+        <taxonomy translate="1">portfolio-tag</taxonomy>
+        <taxonomy translate="1">portfolio-category</taxonomy>
+    </taxonomies>
+    <custom-fields>
+        <custom-field action="copy">_dima_link_url</custom-field>
+        <custom-field action="translate">_dima_quote_quote</custom-field>
+        <custom-field action="translate">_dima_quote_cite</custom-field>
+        <custom-field action="copy">_dima_video_m4v</custom-field>
+        <custom-field action="copy">_dima_video_ogv</custom-field>
+        <custom-field action="copy">_dima_video_embed</custom-field>
+        <custom-field action="copy">_dima_audio_mp3</custom-field>
+        <custom-field action="copy">_dima_audio_ogg</custom-field>
+        <custom-field action="copy">_dima_audio_embed</custom-field>
+        <custom-field action="translate">_dima_portfolio_breadcumbs_subtitle</custom-field>
+    </custom-fields>
+    <admin-texts>
+        <key name="dima_navbar_option_address_text_topbar"/>
+        <key name="dima_navbar_option_tel_text_topbar"/>
+        <key name="dima_news_title"/>
+        <key name="dima_projects_slug_name"/>
+        <key name="dima_footer_content_text"/>
+    </admin-texts>
+</wpml-config>
